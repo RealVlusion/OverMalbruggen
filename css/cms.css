@@ -1,0 +1,95 @@
+/*Inloggen*/
+.inloggenBody {
+    margin: 0;
+    padding: 0;
+    background-color: #dc3545;
+    height: 100vh;
+}
+#login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+/*Navbar*/
+Nav img{
+    margin: 1rem;
+}
+
+/*Nieuws*/
+.candyText{
+    margin-top: 0rem;
+}
+
+.candy_content{
+    max-height: 40rem;
+}
+
+.candy_content img{
+    max-height: 15rem;
+}
+
+.flexItem{
+    padding: 1rem;
+    background-color: lightgrey;
+    width: 30%;
+    margin: 10px;
+    min-height: 30rem;
+    max-height: 40rem;
+}
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+/*Content*/
+.cmsContent{
+    width: 80%;
+    margin: auto;
+    padding: 2rem;
+}
+
+/*TEXT MARKUP*/
+.centerText{
+    text-align: center;
+}
+
+/*Team*/
+.teamContainer{
+    width: 100%;
+    margin: auto;
+    padding: 3rem;
+}
+
+.flex-container {
+    display: flex;
+    margin: 0.5rem;
+    margin-top: 4rem;
+}
+.flex-container img{
+    width: 25%;
+}
+
+.verwijderTeamlid{
+    margin-left: 1rem;
+}
+
+.addContainer{
+    width: 50%;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+

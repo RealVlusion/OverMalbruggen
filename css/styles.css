@@ -1,0 +1,191 @@
+
+/*TEXT MARKUP*/
+.centerText{
+    text-align: center;
+}
+
+
+/*INDEX*/
+.jumbotron{
+    margin: 0px;
+}
+
+.indexContent{
+    max-width: 80%;
+    margin: auto;
+}
+
+.indexIntro{
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.indexCarousel img{
+    height: 30rem;
+}
+
+/*Nieuws*/
+.candyText{
+    margin-top: 1rem;
+}
+
+.candy_content{
+    margin: 0.5rem;
+}
+
+.flexItem{
+    padding: 1rem;
+    background-color: lightgrey;
+    width: 30%;
+    margin: 10px;
+}
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+/*Nieuwsartikel*/
+.artikelSection{
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/*Meedoen*/
+.meedoenSection{
+    width: 70%;
+    margin: auto;
+    padding-top: 2rem;
+}
+
+/*Tickets*/
+.ticketBody{
+    background-color:  #dc4e5b;
+    margin: 0;
+}
+#ticketContainer{
+    max-width: 45rem;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.ticketForm{
+    background-color:  #dc4e5b;
+    color: white;
+    width: 60%;
+    margin: auto;
+    padding: 2rem;
+}
+
+.ticketContainer{
+    background-color: #dc4e5b;
+}
+
+
+a:visited{
+    color: grey;
+}
+
+/*Team*/
+.teamContainer{
+    width: 100%;
+    margin: auto;
+    padding: 3rem;
+}
+
+.flex-container {
+    display: flex;
+    margin: 0.5rem;
+}
+.flex-container img{
+    width: 25%;
+}
+
+/*Sponsors*/
+.sponsorContainer{
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.sponsorsFlexBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sponsorItem {
+    margin: 5px;
+    max-width: 11rem;
+}
+
+/*Voorstellingen*/
+.content{
+    margin: auto;
+}
+
+.voorstellingContainer{
+    margin-bottom: 2rem;
+}
+
+/*Navbar*/
+Nav img{
+    margin: 1rem;
+}
+
+/*FOOTER*/
+.footer {
+    background: #dc3545;
+    color: white;
+    padding: 2rem;
+}
+
+footer a:visited{
+    color: white;
+}
+
+.footer .links ul {
+    list-style-type: none;
+}
+.footer .links li a {
+    color: white;
+    transition: color .2s;
+}
+.footer .links li a:hover {
+    text-decoration: none;
+    color: lightgrey;
+}
+.footer .about-company i {
+    font-size: 25px;
+}
+.footer .about-company a {
+    color: white;
+    transition: color .2s;
+}
+.footer .about-company a:hover {
+    color: darkgrey;
+}
+.footer .location i {
+    font-size: 18px;
+}
+.footer .copyright p {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pt-4, .py-4 {
+    padding-top: 0rem!important;
+}
+
+.mt-5, .my-5 {
+    margin-top: 0rem!important;
+}
+/*FOOTER END*/
+
+
+
