@@ -1,10 +1,20 @@
 <?php
 
 include_once('../includes/connection.php');
-include_once('../includes/team.php');
+include_once('../includes/voorstelling.php');
 
-$team = new Team;
-$teammember = $team->fetch_all();
+$voorstelling = new Voorstelling();
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+
+    $query = $pdo->prepare('DELETE FROM voorstelling WHERE voorstellingID = ?');
+    $query->bindValue(1, $id);
+    $query->execute();
+
+    header('Location: voorstellingen.php');
+}
+$voorstellingen = $voorstelling->fetch_all();
 
 ?>
 
@@ -44,10 +54,10 @@ $teammember = $team->fetch_all();
             <li class="nav-item">
                 <a class="nav-link" href="team.php">Team</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="nieuws.php">Nieuws</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
         </ul>
@@ -58,33 +68,25 @@ $teammember = $team->fetch_all();
 </nav>
 
 <main>
-    <!--Voorstellingen-->
-    <section class="voorstellingContainer">
-        <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
-        <h6 class="centerText">Hieronder staan al onze voorstellingen</h6>
+    <section class="cmsContent">
+        <h1 class="centerText">Voorstellingen</h1>
+        <p class="centerText">Hier kun je een voorstelling toevoegen of verwijderen.</p>
+        <a href="nieuwevoorstelling.php"> <button type="button" class="btn btn-outline-danger">Nieuwe voorstelling</button></a>
 
-        <div class="text-center">
-            <h3>Voorstelling 1</h3>
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
-        </div>
+        <section class="voorstellingContainer">
 
-        <div class="text-center">
-            <h3>Voorstelling 2</h3>
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
-        </div>
+                <?php foreach ($voorstellingen as $voorstelling) { ?>
+                    <div class="text-center">
+                        <h3><?php echo $voorstelling['voorstellingNaam']; ?></h3>
+                        <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
+                    </div>
+                    <!--Verwijder het artikel-->
+                    <a href='voorstellingen.php?id=<?php echo $voorstelling['voorstellingID']; ?>'>Verwijder</a>
+                <?php } ?>
 
-        <br>
-        <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
 
-        <div class="text-center">
-            <h3>Voorstelling 1</h3>
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
-        </div>
-
-        <div class="text-center">
-            <h3>Voorstelling 2</h3>
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
-        </div>
+            </section>
+        </section>
     </section>
 
 </main>

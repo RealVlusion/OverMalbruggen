@@ -1,3 +1,14 @@
+<?php
+
+include_once('../includes/connection.php');
+include_once('../includes/voorstelling.php');
+
+$voorstelling = new Voorstelling();
+
+$voorstellingen = $voorstelling->fetch_all();
+
+?>
+
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -72,15 +83,12 @@
         <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
         <h6 class="centerText">Hieronder staan al onze voorstellingen</h6>
 
-        <div class="text-center">
-            <h3>Voorstelling 1</h3>
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
-        </div>
-
-        <div class="text-center">
-            <h3>Voorstelling 2</h3>
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
-        </div>
+        <?php foreach ($voorstellingen as $voorstelling) { ?>
+            <div class="text-center">
+                <h3><?php echo $voorstelling['voorstellingNaam']; ?></h3>
+                <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
+            </div>
+        <?php } ?>
 
         <br>
         <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>

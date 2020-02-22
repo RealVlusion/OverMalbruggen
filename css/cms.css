@@ -54,6 +54,12 @@ Nav img{
     margin: auto;
 }
 
+/*Voorstellingen*/
+.voorstellingContainer{
+    margin-bottom: 2rem;
+}
+
+
 /*Content*/
 .cmsContent{
     width: 80%;
