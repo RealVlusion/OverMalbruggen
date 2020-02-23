@@ -78,7 +78,7 @@ $voorstellingen = $voorstelling->fetch_all();
                 <?php foreach ($voorstellingen as $voorstelling) { ?>
                     <div class="text-center">
                         <h3><?php echo $voorstelling['voorstellingNaam']; ?></h3>
-                        <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
+                        <a href="voorstelling1.php"><img src="<?php echo $voorstelling['imagePath']; ?>"></a>
                     </div>
                     <!--Verwijder het artikel-->
                     <a href='voorstellingen.php?id=<?php echo $voorstelling['voorstellingID']; ?>'>Verwijder</a>

@@ -8,6 +8,9 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
     $voorstellingPrijsRegulier = $_POST['voorstellingPrijsRegulier'];
     $voorstellingPrijsCJP = $_POST['voorstellingPrijsCJP'];
     $voorstellingDatum1 = $_POST['voorstellingDatum1'];
+    $voorstellingDatum2 = $_POST['voorstellingDatum2'];
+    $voorstellingDatum3 = $_POST['voorstellingDatum3'];
+    $voorstellingDatum4 = $_POST['voorstellingDatum4'];
     $isActief = 1;
 
     $file_name = $_FILES['image']['name'];
@@ -24,24 +27,36 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
         $error = "Je moet alle velden invullen.";
     } else {
 
+        if(empty($voorstellingDatum2)){
+            $voorstellingDatum2 = NULL;
+        }
+        if(empty($voorstellingDatum3)){
+            $voorstellingDatum3 = NULL;
+        }
+        if(empty($voorstellingDatum4)){
+            $voorstellingDatum4 = NULL;
+        }
+
         if(in_array($file_ext,$extensions)=== false){
             $errors[]="extension not allowed, please choose a JPEG or PNG file.";
         }
 
         if($file_size > 2097152) {
             $errors[]='File size must be excately 2 MB';
+
         }
 
         if(empty($errors)==true) {
-            $image_path = "uploads/".$file_name;
+            $image_path = "../uploads/".$file_name;
             move_uploaded_file($file_tmp,$image_path);
             echo "Foto met succes geupload";
+
         }else{
             print_r($errors);
         }
 
-
-        $query = $pdo->prepare('INSERT INTO voorstelling (voorstellingNaam, voorstellingContent, voorstellingPrijsRegulier, voorstellingPrijsCJP, imagePath, voorstellingDatum1, isActief) VALUES(?, ?, ?, ?, ?, ?, ?)');
+    try{
+        $query = $pdo->prepare('INSERT INTO voorstelling (voorstellingNaam, voorstellingContent, voorstellingPrijsRegulier, voorstellingPrijsCJP, imagePath, voorstellingDatum1, voorstellingDatum2, voorstellingDatum3, voorstellingDatum4, isActief) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
         $query->bindValue(1, $voorstellingNaam);
         $query->bindValue(2, $voorstellingContent);
@@ -49,17 +64,25 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
         $query->bindValue(4, $voorstellingPrijsCJP);
         $query->bindValue(5, $image_path);
         $query->bindValue(6, $voorstellingDatum1);
-        $query->bindValue(7, $isActief);
+        $query->bindValue(7, $voorstellingDatum2);
+        $query->bindValue(8, $voorstellingDatum3);
+        $query->bindValue(9, $voorstellingDatum4);
+        $query->bindValue(10, $isActief);
 
 
 
         $query->execute();
+    }
 
-        header('Location: ');
+    catch (PDOException $e){
+            print $e;
+        }
+
+
+        header('Location: voorstellingen.php');
     }
 }
 ?>
-
 <!--    Page Front-End-->
 
 <html>

@@ -5,26 +5,15 @@ include_once('../includes/nieuwsartikel.php');
 
 $nieuwsartikel = new Nieuwsartikel;
 
-if(isset($_GET['deleteID'])){
-    $deleteID = $_GET['deleteID'];
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
 
-    $query = $pdo->prepare('DELETE FROM nieuws WHERE nieuwsID = ?');
-    $query->bindValue(1, $deleteID);
+    $query = $pdo->prepare('SELECT FROM nieuws WHERE nieuwsID = ?');
+    $query->bindValue(1, $id);
     $query->execute();
 
     header('Location: nieuws.php');
 }
-
-//if(isset($_GET['editID'])){
-//    $editID = $_GET['editID'];
-//
-//    $query = $pdo->prepare('DELETE FROM nieuws WHERE nieuwsID = ?');
-//    $query->bindValue(1, $editID);
-//    $query->execute();
-//
-//    header('Location: nieuws.php');
-//}
-
 $nieuwsartikels = $nieuwsartikel->fetch_all();
 
 ?>
@@ -80,29 +69,28 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 
 <main>
     <section class="cmsContent">
-        <h1 class="centerText">Nieuws</h1>
-        <p class="centerText">Hier kun je een nieuwsartikel toevoegen of verwijderen.</p>
-        <a href="nieuwartikel.php"> <button type="button" class="btn btn-outline-danger">Nieuw artikel</button></a>
+        <h1 class="centerText">Pas artikel aan</h1>
+        <p class="centerText">Hier kun je een nieuwsartikel aanpassen.</p>
+        <a href="nieuwartikel.php"> <button type="button" class="btn btn-outline-danger">Pas aan</button></a>
         <section class="indexNieuws">
             <section class="flexContainer" >
 
                 <?php foreach ($nieuwsartikels as $nieuwsartikel) { ?>
                     <section class="flexItem">
                         <div class="candy_content">
-                        <div class="candyText">
-                            <img class="card-img-top" src="<?php echo $nieuwsartikel['imagePath']; ?>" alt="<?php echo $nieuwsartikel['nieuwsTitel']; ?>">
-                            <h5><?php echo $nieuwsartikel['nieuwsTitel']; ?></h5>
-                            <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
+                            <div class="candyText">
+                                <img class="card-img-top" src="<?php echo $nieuwsartikel['imagePath']; ?>" alt="<?php echo $nieuwsartikel['nieuwsTitel']; ?>">
+                                <h5><?php echo $nieuwsartikel['nieuwsTitel']; ?></h5>
+                                <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
 
 
 
 
-                            <!--Verwijder het artikel-->
-                            <a href='nieuws.php?deleteID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Verwijder</a>
-                            <a href='nieuws.php?editID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Pas aan</a>
+                                <!--Verwijder het artikel-->
+                                <a href='nieuws.php?id=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Verwijder</a>
 
 
-                        </div>
+                            </div>
                         </div>
                     </section>
                 <?php } ?>

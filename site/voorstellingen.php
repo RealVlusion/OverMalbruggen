@@ -7,6 +7,19 @@ $voorstelling = new Voorstelling();
 
 $voorstellingen = $voorstelling->fetch_all();
 
+function getVoorstellingen($isActief) {
+
+                <?php foreach ($voorstellingen as $voorstelling) { ?>
+                    <div class="text-center">
+                        <h3><?php echo $voorstelling['voorstellingNaam']; ?></h3>
+                        <a href="voorstelling1.php"><img src="<?php echo $voorstelling['imagePath']; ?>"></a>
+                    </div>
+                    <!--Verwijder het artikel-->
+                    <a href='voorstellingen.php?id=<?php echo $voorstelling['voorstellingID']; ?>'>Verwijder</a>
+                <?php } ?>
+
+}
+
 ?>
 
 <html lang="nl">
@@ -82,14 +95,18 @@ $voorstellingen = $voorstelling->fetch_all();
     <section class="voorstellingContainer">
         <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
         <h6 class="centerText">Hieronder staan al onze voorstellingen</h6>
+        <?php
+        $isActief = 1;
+        getVoorstellingen($isActief);
+        ?>
 
-        <?php foreach ($voorstellingen as $voorstelling) { ?>
+            <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
+
             <div class="text-center">
-                <h3><?php echo $voorstelling['voorstellingNaam']; ?></h3>
-                <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
+
+                <a href="voorstelling1.php"><img src="<?php echo $voorstelling['imagePath']; ?>"></a>
             </div>
         <?php } ?>
-
         <br>
         <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
 
