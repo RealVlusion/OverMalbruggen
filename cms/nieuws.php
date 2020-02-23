@@ -95,12 +95,9 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
                             <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
 
 
-
-
                             <!--Verwijder het artikel-->
                             <a href='nieuws.php?deleteID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Verwijder</a>
-                            <a href='nieuws.php?editID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Pas aan</a>
-
+                            <a href='editartikel.php?editID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Pas aan</a>
 
                         </div>
                         </div>

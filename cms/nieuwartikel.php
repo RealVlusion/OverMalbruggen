@@ -12,7 +12,7 @@ include_once('../includes/connection.php');
         $file_type = $_FILES['image']['type'];
         $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
 
-        $extensions= array("jpeg","jpg","png");
+        $extensions= array("jpeg","jpg","png", "PNG");
 
         if (empty($title) or empty($content)) {
             $error = "Je moet alle velden invullen.";
@@ -23,11 +23,11 @@ include_once('../includes/connection.php');
             }
 
             if($file_size > 2097152) {
-                $errors[]='File size must be excately 2 MB';
+                $errors[]='Het bestand mag niet groter zijn dan 2MB';
             }
 
             if(empty($errors)==true) {
-                $image_path = "uploads/".$file_name;
+                $image_path = "../uploads/".$file_name;
                 move_uploaded_file($file_tmp,$image_path);
                 echo "Success";
             }else{

@@ -3,17 +3,37 @@
 include_once('../includes/connection.php');
 include_once('../includes/nieuwsartikel.php');
 
+$mysqli = new mysqli("localhost","root","admin","overMalbruggenDb");
+
+// Check connection
+if ($mysqli -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+    exit();
+}
+
+$editID = $_GET['editID'];
+
+$result = mysqli_query($mysqli, "SELECT * FROM nieuws WHERE nieuwsID = $editID ");
+$tempArtikel = mysqli_fetch_assoc($result);
+
+
+if (isset($_POST['nw_update'])) {
+    $title = $_POST['title'];
+    $content = nl2br($_POST['content']);
+
+    $sql = "UPDATE nieuws SET nieuwsTitel = '$title', nieuwsContent = '$content' WHERE nieuwsID = $editID";
+
+    if ($mysqli->query($sql) === TRUE) {
+        echo "Succesvol aangepast";
+    } else {
+        echo "Error updating record: " . $mysqli->error;
+    }
+
+    header('Location: nieuws.php ');
+}
+
 $nieuwsartikel = new Nieuwsartikel;
 
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-
-    $query = $pdo->prepare('SELECT FROM nieuws WHERE nieuwsID = ?');
-    $query->bindValue(1, $id);
-    $query->execute();
-
-    header('Location: nieuws.php');
-}
 $nieuwsartikels = $nieuwsartikel->fetch_all();
 
 ?>
@@ -70,33 +90,32 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 <main>
     <section class="cmsContent">
         <h1 class="centerText">Pas artikel aan</h1>
-        <p class="centerText">Hier kun je een nieuwsartikel aanpassen.</p>
-        <a href="nieuwartikel.php"> <button type="button" class="btn btn-outline-danger">Pas aan</button></a>
+        <p class="centerText">Pas hier aan bestaand artikel aan.</p>
         <section class="indexNieuws">
-            <section class="flexContainer" >
 
-                <?php foreach ($nieuwsartikels as $nieuwsartikel) { ?>
-                    <section class="flexItem">
-                        <div class="candy_content">
-                            <div class="candyText">
-                                <img class="card-img-top" src="<?php echo $nieuwsartikel['imagePath']; ?>" alt="<?php echo $nieuwsartikel['nieuwsTitel']; ?>">
-                                <h5><?php echo $nieuwsartikel['nieuwsTitel']; ?></h5>
-                                <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
+            <div class="container">
 
 
-
-
-                                <!--Verwijder het artikel-->
-                                <a href='nieuws.php?id=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Verwijder</a>
-
-
+                <?php if (isset($error)) { ?>
+                <small style="color:#aa0000"><?php echo $error; ?>
+                    <br /><br />
+                    <?php } ?>
+                    <main class="addContainer">
+                        <h2>Pas artikel aan</h2>
+                        <form action="" method="post" autocomplete="off"  enctype = "multipart/form-data">
+                            <div class="form-group">
+                                <label for="Titel">Titel</label>
+                                <input type="text" name="title" class="form-control" value="<?php echo $tempArtikel['nieuwsTitel'];?>" required id="Titel" placeholder="Titel">
                             </div>
-                        </div>
-                    </section>
-                <?php } ?>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Content</label>
+                                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" required placeholder="Content" rows="3"></textarea>
+                            </div>
 
-
-            </section>
+                            <input type="submit" name="nw_update" value="NW_Update"/>
+                        </form>
+                    </main>
+            </div>
         </section>
     </section>
 

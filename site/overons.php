@@ -88,6 +88,21 @@ $teammember = $team->fetch_all();
                 andere culturele achtergrond. Ook in Malburgen, de wijk waarin mensen van de grootste
                 verscheidenheid aan culturen van alle wijken in Arnhem wonen, ontbreekt een sterke sociale cohesie en er veel eenzaamheid, voornamelijk onder ouderen.</p>
             <hr>
+
+            <h2 class="centerText">De kracht van theater</h2>
+            <p>Culturele activiteiten kunnen uitkomst bieden bij deze problemen omdat zij ”de ander” op een niet bedreigende manier kunnen tonen. Theater kan de mens achter een ogenschijnlijk
+                vreemd of soms ”eng” masker laten zien en doordat mensen elkaars verhaal zo kunnen horen kunnen nieuwe perspectieven en meer begrip voor mensen met
+                een andere (migratie) achtergrond ontstaan waardoor nieuwe verbindingen tot stand kunnen komen tussen mensen als ook meer zelfvertrouwen en eigenwaarde.
+                Zo kan theater uitdragen, veranderde invalshoeken bieden, mensen bij elkaar brengen, tegenstellingen laten zien maar  tegelijk een verbindende factor vormen door stereotypen te
+                doorbreken en zo meer begrip kweken. Ook muziek en dans kunnen communicatie bewerkstelligen zonder taalbarrières tussen mensen met verschillende culturele achtergronden.</p>
+            <hr>
+
+            <h2 class="centerText">Wat doet theater OverMalbruggen</h2>
+            <p>Theater OverMalbruggen wil deze kracht van theater om ontmoetingen en verbindingen tussen mensen te bewerkstelligen en meer begrip voor elkaar te krijgen, gebruiken.
+                In vijf maanden werken deelnemers uit Arnhem-Zuid van 16-80 jaar en van verscheidene afkomsten, genders, seksuele oriëntaties, sociaaleconomische afkomsten etc in wekelijkse workshops samen om een toneelvoorstelling te realiseren. Wekelijks leren zij elkaar kennen, ontmoeten ze elkaar en tonen in hun voorstelling de rijkdom aan verhalen van de wijk, Arnhem en omstreken om zo meer begrip te kweken onder het publiek.
+                Zoals in de naam van deze theatergroep gevangen zit; het is theater over Malburgen maar ook een project dat verschillen tussen wijkbewoners moet overbruggen.</p>
+            <hr>
+
         </section>
 
         <section class="teamContainer">
@@ -100,7 +115,7 @@ $teammember = $team->fetch_all();
                         <div class="flex-container" id="product1">
                             <a class="list-group-item list-group-item-action" data-aos="fade-right" data-aos-anchor=".list-group"><h3><?php echo $team['teamlidNaam']; ?><small> - <?php echo $team['teamlidRol']; ?></small></h3>
                                 <p><?php echo $team['teamlidOmschrijving']; ?></p></a>
-                            <img data-aos="fade-left" data-aos-anchor=".list-group" src="https://via.placeholder.com/150">
+                            <img data-aos="fade-left" data-aos-anchor=".list-group" src="<?php echo $team['imagePath']; ?>">
 
                         </div>
 

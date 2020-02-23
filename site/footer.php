@@ -23,7 +23,7 @@
                 <div class="col-lg-3 col-xs-12 links">
                     <h4 class="mt-lg-0 mt-sm-3">Contact</h4>
                     <ul class="m-0 p-0">
-                        <li>E-mail: </li>
+                        <li>E-mail: info@overmalbruggen.nl</li>
                         <li>Tel:</li>
                         <li>Stad: Arnhem</li>
                         <li>Straat: </li>
@@ -33,7 +33,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col copyright">
-                    <p class=""><small class="text-white-50">Copyright © - 2020 Malbruggen | Ontworpen door <a href="https://www.levelswebdesign.nl/">Levels Webdesign</a>.</small></p>
+                    <p class=""><small class="text-white-50">Copyright © - 2020 Malbruggen | Ontworpen door <a href="https://www.levelswebdesign.nl/">Levels Webdesign</a> | <a href="../cms/inloggen.php">CMS</a></small></p>
                 </div>
             </div>
         </div>

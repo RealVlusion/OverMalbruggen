@@ -2,51 +2,38 @@
 
 include_once('../includes/connection.php');
 
-if (isset($_POST['title'], $_POST['content'])) {
-    $teamlidNaam = $_POST['title'];
-    $teamlidOmschrijving = nl2br($_POST['content']);
-    $teamlidRol = $_POST['teamlidRol'];
+$mysqli = new mysqli("localhost","root","admin","overMalbruggenDb");
 
-    $file_name = $_FILES['image']['name'];
-    $file_size = $_FILES['image']['size'];
-    $file_tmp = $_FILES['image']['tmp_name'];
-    $file_type = $_FILES['image']['type'];
-    $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+// Check connection
+if ($mysqli -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+    exit();
+}
 
-    $extensions= array("jpeg","jpg","png");
+$editID = $_GET['editID'];
 
-    if (empty($teamlidNaam) or empty($teamlidOmschrijving) or empty($teamlidRol)) {
-        $error = "Je moet alle velden invullen.";
+$result = mysqli_query($mysqli, "SELECT * FROM team WHERE teamlidID = $editID ");
+$tempTeamlid = mysqli_fetch_assoc($result);
+
+//UPDATE TEAMLID
+if (isset($_POST['nw_update'])) {
+    $title = $_POST['title'];
+    $content = nl2br($_POST['content']);
+    $rol = $_POST['teamlidRol'];
+
+    var_dump($title);
+    var_dump($content);
+    var_dump($rol);
+
+    $sql = "UPDATE team SET teamlidNaam = '$title', teamlidOmschrijving = '$content', teamlidRol = '$rol' WHERE teamlidID = $editID";
+
+    if ($mysqli->query($sql) === TRUE) {
+        echo "Succesvol aangepast";
     } else {
-
-        if(in_array($file_ext,$extensions)=== false){
-            $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-        }
-
-        if($file_size > 2097152) {
-            $errors[]='Het bestand mag niet groter zijn dan 2MB';
-        }
-
-        if(empty($errors)==true) {
-            $image_path = "../uploads/".$file_name;
-            move_uploaded_file($file_tmp,$image_path);
-            echo "Success";
-        }else{
-            print_r($errors);
-        }
-
-
-        $query = $pdo->prepare('INSERT INTO team (teamlidNaam, teamlidOmschrijving, teamlidRol, imagePath) VALUES(?, ?, ?, ?)');
-
-        $query->bindValue(1, $teamlidNaam);
-        $query->bindValue(2, $teamlidOmschrijving);
-        $query->bindValue(3, $teamlidRol);
-        $query->bindValue(4, $image_path);
-
-        $query->execute();
-
-        header('Location: team.php');
+        echo "Error updating record: " . $mysqli->error;
     }
+
+    header('Location: ');
 }
 ?>
 
@@ -98,11 +85,11 @@ if (isset($_POST['title'], $_POST['content'])) {
         <br /><br />
         <?php } ?>
         <main class="addContainer">
-            <h2>Voeg teamlid toe</h2>
+            <h2>Pas teamlid aan</h2>
             <form action="" method="post" autocomplete="off"  enctype = "multipart/form-data">
                 <div class="form-group">
                     <label for="Titel">Naam</label>
-                    <input type="text" name="title" class="form-control" required id="Titel" placeholder="Naam">
+                    <input type="text" name="title" class="form-control" value="<?php echo $tempTeamlid['teamlidNaam'];?>" required id="Titel" placeholder="Naam">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Omschrijving</label>
@@ -110,13 +97,9 @@ if (isset($_POST['title'], $_POST['content'])) {
                 </div>
                 <div class="form-group">
                     <label for="teamlidRol">Rol</label>
-                    <input type="text" name="teamlidRol" class="form-control" required id="teamlidRol" placeholder="Rol">
+                    <input type="text" name="teamlidRol" class="form-control" value="<?php echo $tempTeamlid['teamlidRol'];?>" required id="teamlidRol" placeholder="Rol">
                 </div>
-                <div class="form-group">
-                    <input required type = "file" name = "image" />
-                </div>
-
-                <button type="submit" class="btn btn-outline-danger">Voeg toe</button>
+                <input type="submit" name="nw_update" value="NW_Update"/>
             </form>
         </main>
 </div>

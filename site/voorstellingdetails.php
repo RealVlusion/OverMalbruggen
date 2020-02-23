@@ -73,10 +73,10 @@
     <div class="indexContent">
 
         <section class="indexIntro">
-            <h3 class="centerText">Voorstelling 1 <span class="badge badge-danger">Actief</span></h3>
-            <h6>Deze voorstelling gaat over ...</h6>
+            <h3 class="centerText">Voorstelling titel <span class="badge badge-danger">Actief</span></h3>
+            <h6>Voorstelling content</h6>
 
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
+            <a href="voorstellingdetails.php"><img src="https://via.placeholder.com/800x300"></a>
 
             <div class="container datesContent">
                 <h3 class="centerText">Speeltijden</h3>

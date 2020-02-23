@@ -21,7 +21,7 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
     $tmp           = explode('.',$_FILES['image']['name']);
     $file_ext = end($tmp);
 
-    $extensions= array("jpeg","jpg","png");
+    $extensions= array("jpeg","jpg","png", "PNG");
 
     if (empty($voorstellingNaam) or empty($voorstellingContent)) {
         $error = "Je moet alle velden invullen.";
@@ -38,11 +38,11 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
         }
 
         if(in_array($file_ext,$extensions)=== false){
-            $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+            $errors[]="De extentie van deze afbeelding is niet toegestaan. Gebruik een andere extentie.";
         }
 
         if($file_size > 2097152) {
-            $errors[]='File size must be excately 2 MB';
+            $errors[]='Het bestand mag niet groter zijn dan 2MB';
 
         }
 

@@ -1,3 +1,14 @@
+<?php
+
+include_once('../includes/connection.php');
+include_once('../includes/nieuwsartikel.php');
+
+$nieuwsartikel = new Nieuwsartikel;
+
+$nieuwsartikels = $nieuwsartikel->fetch_all();
+
+?>
+
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -113,34 +124,24 @@
             met mensen met verschillende (culturele) achtergronden te verbinden en elkaars verhaal leren kennen en natuurlijk een hoop lol te maken samen!</h6>
     </section>
 
-    <section class="indexNieuws">
-        <h1 class="centerText">Nieuws</h1>
-        <section class="flexContainer" >
-                <section class="flexItem">
-                    <div class="candyText">
-                        <h5>TEST</h5>
-                        <img class="card-img-top" src="../img/sponsors/uitnacht.png" alt="Card image cap">
-                        <p class="candy_content">vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</p>
-                        <button type="button" class="btn btn-outline-secondary">Lees meer</button>
-                    </div>
-                </section>
-            <section class="flexItem">
-                <div class="candyText">
-                    <h5>TEST</h5>
-                    <img class="card-img-top" src="../img/sponsors/uitnacht.png" alt="Card image cap">
-                    <p class="candy_content">vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</p>
-                    <button type="button" class="btn btn-outline-secondary">Lees meer</button>
-                </div>
+        <section class="indexNieuws">
+            <section class="flexContainer" >
+
+                <?php foreach ($nieuwsartikels as $nieuwsartikel) { ?>
+                    <section class="flexItem">
+                        <div class="candy_content">
+                            <div class="candyText">
+                                <img class="card-img-top" src="<?php echo $nieuwsartikel['imagePath']; ?>" alt="<?php echo $nieuwsartikel['nieuwsTitel']; ?>">
+                                <h5><?php echo $nieuwsartikel['nieuwsTitel']; ?></h5>
+                                <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
+                                <a href='nieuwsartikel.php?artikelID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Bekijk</a>
+                            </div>
+                        </div>
+                    </section>
+                <?php } ?>
+
+
             </section>
-            <section class="flexItem">
-                <div class="candyText">
-                    <h5>TEST</h5>
-                    <img class="card-img-top" src="../img/sponsors/uitnacht.png" alt="Card image cap">
-                    <p class="candy_content">vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</p>
-                    <button type="button" class="btn btn-outline-secondary">Lees meer</button>
-                </div>
-            </section>
-                </section>
         </section>
     </section>
 

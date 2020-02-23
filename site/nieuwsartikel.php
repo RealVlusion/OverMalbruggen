@@ -1,3 +1,19 @@
+<?php
+
+include_once('../includes/connection.php');
+include_once('../includes/nieuwsartikel.php');
+
+$nieuwsartikel = new Nieuwsartikel;
+
+$artikelID = $_GET['artikelID'];
+$query = $pdo->prepare('DELETE FROM nieuws WHERE nieuwsID = ?');
+$query->bindValue(1, $artikelID);
+$query->execute();
+
+$nieuwsartikels = $nieuwsartikel->fetch_all();
+
+?>
+
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -68,13 +84,19 @@
 <main>
     <div class="indexContent">
 
-        <section class="artikelSection">
-            <h1 class="centerText">Artikel Titel</h1>
-            <p class="artikelContent">Wat is schuld? Heb je schuld aan milieuvervuiling? Wat zegt de Dikke van Dalen over schuld? Moet je iemand helpen die dat vraagt terwijl je haast hebt? theatergroep OverMalbruggen nodigt u uit om op deze en andere vragen antwoorden te vinden. Gaat u met ons mee op deze spannende, soms pijnlijke maar ook vaak grappige zoektocht naar schuld onschuld en de impact van
-                deze verschijnselen op ons dagelijks leven? Kom dan naar onze voorstelling op 24 januari, 1 of 2 februari 2020! Meer informatie kunt u hier vinden!</p>
-            <img src="https://via.placeholder.com/800x300">
-            <button type="button" class="btn btn-outline-dark">Ga terug</button>
-        </section>
+
+
+            <section class="flexItem">
+                <div class="candy_content">
+                    <div class="candyText">
+                        <img class="card-img-top" src="<?php echo $nieuwsartikel['imagePath']; ?>" alt="<?php echo $nieuwsartikel['nieuwsTitel']; ?>">
+                        <h5><?php echo $nieuwsartikel['nieuwsTitel']; ?></h5>
+                        <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
+                        <a href='nieuwsartikel.php?artikelID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Bekijk</a>
+                    </div>
+                </div>
+            </section>
+
 
      </section>
 

@@ -92,6 +92,11 @@ Nav img{
     margin-left: 1rem;
 }
 
+/*logout*/
+.logoutButton{
+    float: right;
+}
+
 .addContainer{
     width: 50%;
     margin: auto;

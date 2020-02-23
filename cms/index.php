@@ -41,7 +41,7 @@
                 <a class="nav-link" href="nieuws.php">Voorstellingen</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0 logoutButton">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Uitloggen</button>
         </form>
     </div>

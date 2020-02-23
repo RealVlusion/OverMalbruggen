@@ -75,6 +75,9 @@ $voorstellingen = $voorstelling->fetch_all();
 
         <section class="voorstellingContainer">
 
+            <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
+            <!--Hier voorstellingen met isActief == 1 (is dus actief)-->
+
                 <?php foreach ($voorstellingen as $voorstelling) { ?>
                     <div class="text-center">
                         <h3><?php echo $voorstelling['voorstellingNaam']; ?></h3>
@@ -82,7 +85,11 @@ $voorstellingen = $voorstelling->fetch_all();
                     </div>
                     <!--Verwijder het artikel-->
                     <a href='voorstellingen.php?id=<?php echo $voorstelling['voorstellingID']; ?>'>Verwijder</a>
+                    <a href='voorstellingen.php?editID=<?php echo $voorstelling['voorstellingID']; ?>'>Pas aan</a>
                 <?php } ?>
+
+            <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
+            <!--Hier voorstellingen met isActief != 1 (is dus archief)-->
 
 
             </section>

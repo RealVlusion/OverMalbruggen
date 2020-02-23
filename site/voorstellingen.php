@@ -9,14 +9,7 @@ $voorstellingen = $voorstelling->fetch_all();
 
 function getVoorstellingen($isActief) {
 
-                <?php foreach ($voorstellingen as $voorstelling) { ?>
-                    <div class="text-center">
-                        <h3><?php echo $voorstelling['voorstellingNaam']; ?></h3>
-                        <a href="voorstelling1.php"><img src="<?php echo $voorstelling['imagePath']; ?>"></a>
-                    </div>
-                    <!--Verwijder het artikel-->
-                    <a href='voorstellingen.php?id=<?php echo $voorstelling['voorstellingID']; ?>'>Verwijder</a>
-                <?php } ?>
+
 
 }
 
@@ -95,29 +88,18 @@ function getVoorstellingen($isActief) {
     <section class="voorstellingContainer">
         <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
         <h6 class="centerText">Hieronder staan al onze voorstellingen</h6>
-        <?php
-        $isActief = 1;
-        getVoorstellingen($isActief);
-        ?>
 
-            <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
-
-            <div class="text-center">
-
-                <a href="voorstelling1.php"><img src="<?php echo $voorstelling['imagePath']; ?>"></a>
-            </div>
-        <?php } ?>
         <br>
         <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
 
         <div class="text-center">
             <h3>Voorstelling 1</h3>
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
+            <a href="voorstellingdetails.php"><img src="https://via.placeholder.com/800x300"></a>
         </div>
 
         <div class="text-center">
             <h3>Voorstelling 2</h3>
-            <a href="voorstelling1.php"><img src="https://via.placeholder.com/800x300"></a>
+            <a href="voorstellingdetails.php"><img src="https://via.placeholder.com/800x300"></a>
         </div>
     </section>
 

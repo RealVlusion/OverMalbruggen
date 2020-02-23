@@ -4,9 +4,22 @@ include_once('../includes/connection.php');
 include_once('../includes/team.php');
 
 $team = new Team;
+
+if(isset($_GET['deleteID'])){
+    $deleteID = $_GET['deleteID'];
+
+    $query = $pdo->prepare('DELETE FROM team WHERE teamlidID = ?');
+    $query->bindValue(1, $deleteID);
+    $query->execute();
+
+    header('Location: team.php');
+}
+
 $teammember = $team->fetch_all();
 
+
 ?>
+
 
 <html lang="nl">
 <head>
@@ -67,11 +80,11 @@ $teammember = $team->fetch_all();
             <div class="flex-container" id="product1">
                 <a class="list-group-item list-group-item-action" data-aos="fade-right" data-aos-anchor=".list-group"><h3><?php echo $team['teamlidNaam']; ?><small> - <?php echo $team['teamlidRol']; ?></small></h3>
                     <p><?php echo $team['teamlidOmschrijving']; ?></p></a>
-                <img data-aos="fade-left" data-aos-anchor=".list-group" src="https://via.placeholder.com/150">
+                <img data-aos="fade-left" data-aos-anchor=".list-group" src="<?php echo $team['imagePath']; ?>">
 
             </div>
-            <button type="button" class="btn btn-outline-danger verwijderTeamlid">Verwijder</button>
-            <button type="button" class="btn btn-outline-dark verwijderTeamlid">Pas aan</button>
+            <a href='team.php?deleteID=<?php echo $team['teamlidID']; ?>'>Verwijder</a>
+            <a href='editteamlid.php?editID=<?php echo $team['teamlidID']; ?>'>Pas aan</a>
         <?php } ?>
 
 
