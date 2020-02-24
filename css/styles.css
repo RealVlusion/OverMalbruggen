@@ -57,6 +57,16 @@
     margin-bottom: 2rem;
 }
 
+.artikelContent{
+    width: 80%;
+    margin: auto;
+}
+
+.artikelContent img{
+    max-width: 40rem;
+    max-height: 25rem;
+}
+
 /*Meedoen*/
 .meedoenSection{
     width: 70%;

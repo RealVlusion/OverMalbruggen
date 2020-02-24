@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+?>
+
+<?php
+
+
+if (($_SESSION['logged_in'] == true)) {
+?>
+
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -38,12 +50,12 @@
                 <a class="nav-link" href="nieuws.php">Nieuws</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="nieuws.php">Voorstellingen</a>
+                <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Uitloggen</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0 logoutButton">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Uitloggen</button>
-        </form>
     </div>
 </nav>
 
@@ -67,3 +79,9 @@
 </body>
 
 </html>
+
+    <?php
+} else {
+    header('Location: inloggen.php');
+}
+?>

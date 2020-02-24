@@ -2,6 +2,8 @@
 
 include_once('../includes/connection.php');
 
+session_start();
+
 $mysqli = new mysqli("localhost","root","admin","overMalbruggenDb");
 
 // Check connection
@@ -37,7 +39,11 @@ if (isset($_POST['nw_update'])) {
 }
 ?>
 
-<!--    Page Front-End-->
+<?php
+
+
+if (($_SESSION['logged_in'] == true)) {
+?>
 
 <html>
 <head>
@@ -70,10 +76,10 @@ if (isset($_POST['nw_update'])) {
             <li class="nav-item">
                 <a class="nav-link" href="nieuws.php">Voorstellingen</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Uitloggen</a>
+            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Uitloggen</button>
-        </form>
     </div>
 </nav>
 
@@ -107,3 +113,10 @@ if (isset($_POST['nw_update'])) {
 <a href="../index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
 </body>
 </html>
+
+    <?php
+} else {
+    header('Location: inloggen.php');
+}
+?>
+

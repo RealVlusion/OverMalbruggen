@@ -6,9 +6,10 @@ include_once('../includes/nieuwsartikel.php');
 $nieuwsartikel = new Nieuwsartikel;
 
 $artikelID = $_GET['artikelID'];
-$query = $pdo->prepare('DELETE FROM nieuws WHERE nieuwsID = ?');
-$query->bindValue(1, $artikelID);
-$query->execute();
+
+$stmt = $pdo->prepare("SELECT * FROM nieuws WHERE nieuwsID = ?");
+$stmt->execute(array($artikelID));
+$artikel = $stmt->fetch();
 
 $nieuwsartikels = $nieuwsartikel->fetch_all();
 
@@ -84,18 +85,15 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 <main>
     <div class="indexContent">
 
-
-
-            <section class="flexItem">
-                <div class="candy_content">
-                    <div class="candyText">
-                        <img class="card-img-top" src="<?php echo $nieuwsartikel['imagePath']; ?>" alt="<?php echo $nieuwsartikel['nieuwsTitel']; ?>">
-                        <h5><?php echo $nieuwsartikel['nieuwsTitel']; ?></h5>
-                        <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
-                        <a href='nieuwsartikel.php?artikelID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Bekijk</a>
-                    </div>
+        <div class="artikelContent">
+            <h1 class="centerText"><?php echo $artikel['nieuwsTitel']; ?></h1>
+            <div class="d-flex justify-content-center">
+                <img class="card-img-top" src="<?php echo $artikel['imagePath']; ?>" alt="<?php echo $artikel['nieuwsTitel']; ?>">
                 </div>
-            </section>
+            <p><?php echo $artikel['nieuwsContent'];?></p>
+
+
+        </div>
 
 
      </section>

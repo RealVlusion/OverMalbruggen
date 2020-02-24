@@ -3,6 +3,8 @@
 include_once('../includes/connection.php');
 include_once('../includes/nieuwsartikel.php');
 
+session_start();
+
 $nieuwsartikel = new Nieuwsartikel;
 
 if(isset($_GET['deleteID'])){
@@ -27,6 +29,11 @@ if(isset($_GET['deleteID'])){
 
 $nieuwsartikels = $nieuwsartikel->fetch_all();
 
+?>
+
+<?php
+
+if (($_SESSION['logged_in'] == true)) {
 ?>
 
 <html lang="nl">
@@ -71,10 +78,10 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
             <li class="nav-item">
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Uitloggen</a>
+            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Uitloggen</button>
-        </form>
     </div>
 </nav>
 
@@ -118,3 +125,9 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 </body>
 
 </html>
+    <?php
+} else {
+    header('Location: inloggen.php');
+}
+?>
+

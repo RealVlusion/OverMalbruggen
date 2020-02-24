@@ -3,6 +3,8 @@
 include_once('../includes/connection.php');
 include_once('../includes/team.php');
 
+session_start();
+
 $team = new Team;
 
 if(isset($_GET['deleteID'])){
@@ -20,6 +22,10 @@ $teammember = $team->fetch_all();
 
 ?>
 
+<?php
+
+if (($_SESSION['logged_in'] == true)) {
+?>
 
 <html lang="nl">
 <head>
@@ -63,10 +69,10 @@ $teammember = $team->fetch_all();
             <li class="nav-item">
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Uitloggen</a>
+            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Uitloggen</button>
-        </form>
     </div>
 </nav>
 
@@ -99,3 +105,10 @@ $teammember = $team->fetch_all();
 </body>
 
 </html>
+
+    <?php
+} else {
+    header('Location: inloggen.php');
+}
+?>
+

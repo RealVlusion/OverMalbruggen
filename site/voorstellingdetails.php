@@ -1,3 +1,30 @@
+<?php
+
+include_once('../includes/connection.php');
+include_once('../includes/voorstellingdatum.php');
+
+$Voorstellingdatum = new Voorstellingdatum();
+
+$mysqli = new mysqli("localhost","root","admin","overMalbruggenDb");
+
+// Check connection
+if ($mysqli -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+    exit();
+}
+
+$voorstellingID = $_GET['id'];
+
+//Haal actuele voorstelling data op
+$result = mysqli_query($mysqli, "SELECT * FROM voorstelling WHERE voorstellingID = $voorstellingID ");
+$tempVoorstelling = mysqli_fetch_assoc($result);
+
+//Haal actuele voorstellingdatums data op
+$result = mysqli_query($mysqli, "SELECT * FROM voorstellingdatums WHERE voorstellingID = $voorstellingID ");
+$teampVoorstellingdatums = mysqli_fetch_assoc($result);
+
+?>
+
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -73,70 +100,28 @@
     <div class="indexContent">
 
         <section class="indexIntro">
-            <h3 class="centerText">Voorstelling titel <span class="badge badge-danger">Actief</span></h3>
-            <h6>Voorstelling content</h6>
+            <?php
+                $voorstellingNaam = $tempVoorstelling['voorstellingNaam'];
+                if ($tempVoorstelling['isActief'] == 1) {
+                    echo "<h3 class='centerText'> $voorstellingNaam <span class='badge badge-danger'>Actief</span></h3>";
+                }
+                else {
+                echo "<h3 class='centerText'> $voorstellingNaam <span class='badge badge-danger'>Archief</span></h3>";
+            }
+            ?>
 
-            <a href="voorstellingdetails.php"><img src="https://via.placeholder.com/800x300"></a>
+
+            <a href="voorstellingdetails.php"><img src="<?php echo $tempVoorstelling['imagePath']?>"></a>
+            <h6><?php echo $tempVoorstelling['voorstellingContent']?></h6>
 
             <div class="container datesContent">
                 <h3 class="centerText">Speeltijden</h3>
                 <div class="row text-center">
                     <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ] opvoeringContainer">
                         <ul class="event-list datesContent">
-                            <li>
-                                <time datetime="2014-07-20">
-                                    <span class="day">4</span>
-                                    <span class="month">Jul</span>
-                                    <span class="year">2014</span>
-                                    <span class="time">ALL DAY</span>
-                                </time>
-                                <div class="info">
-                                    <h2 class="title">Opvoering 1</h2>
-                                    <p class="desc">12.00</p>
-                                </div>
-                            </li>
 
-                            <li>
-                                <time datetime="2014-07-20 0000">
-                                    <span class="day">9</span>
-                                    <span class="month">Jul</span>
-                                    <span class="year">2014</span>
-                                    <span class="time">12:00 AM</span>
-                                </time>
-                                <div class="info">
-                                    <h2 class="title">Opvoering 2</h2>
-                                    <p class="desc">18.00</p>
-                                </div>
+                            <?=$Voorstellingdatum->getVoorstellingDates($voorstellingID)?>
 
-                            </li>
-
-
-                            <li>
-                                <time datetime="2014-07-20">
-                                    <span class="day">18</span>
-                                    <span class="month">Jul</span>
-                                    <span class="year">2014</span>
-                                    <span class="time">ALL DAY</span>
-                                </time>
-                                <div class="info">
-                                    <h2 class="title">Opvoering 3</h2>
-                                    <p class="desc">12.00</p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <time datetime="2014-07-20 0000">
-                                    <span class="day">20</span>
-                                    <span class="month">Jul</span>
-                                    <span class="year">2014</span>
-                                    <span class="time">12:00 AM</span>
-                                </time>
-                                <div class="info">
-                                    <h2 class="title">Opvoering 4</h2>
-                                    <p class="desc">18.00</p>
-                                </div>
-
-                            </li>
                         </ul>
                     </div>
                 </div>

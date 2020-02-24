@@ -2,6 +2,8 @@
 
 include_once('../includes/connection.php');
 
+session_start();
+
     if (isset($_POST['title'], $_POST['content'])) {
         $title = $_POST['title'];
         $content = nl2br($_POST['content']);
@@ -50,6 +52,12 @@ include_once('../includes/connection.php');
 
     <!--    Page Front-End-->
 
+<?php
+
+
+if (($_SESSION['logged_in'] == true)) {
+?>
+
     <html>
     <head>
         <title>Candy CMS</title>
@@ -81,10 +89,10 @@ include_once('../includes/connection.php');
                 <li class="nav-item">
                     <a class="nav-link" href="nieuws.php">Voorstellingen</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Uitloggen</a>
+                </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Uitloggen</button>
-            </form>
         </div>
     </nav>
 
@@ -118,3 +126,9 @@ include_once('../includes/connection.php');
     <a href="../index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
     </body>
     </html>
+
+    <?php
+} else {
+    header('Location: inloggen.php');
+}
+?>

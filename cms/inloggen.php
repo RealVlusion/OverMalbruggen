@@ -1,7 +1,18 @@
     <?php
+
+    include_once('../includes/connection.php');
+
+    session_start();
+    $_SESSION['logged_in'] = false;
+
+
     if (isset($_POST['username'], $_POST['password'])) {
         $username = $_POST['username'];
         $password = md5($_POST['password']);
+
+        var_dump($username);
+        var_dump($password);
+        var_dump( $_SESSION['logged_in']);
 
         if (empty($username) or empty($password)) {
             $error = 'All fields must be filled in';
@@ -18,7 +29,7 @@
             if ($num == 1) {
                 // user entered correct details
                 $_SESSION['logged_in'] = true;
-                header('Location: cmsindex.php');
+                header('Location: index.php');
                 exit();
             } else {
                 // user entered false details
@@ -26,7 +37,12 @@
             }
         }
     }
-    ?>
+
+    if (($_SESSION['logged_in'] == true)) {
+        header('Location: index.php');
+    }
+        ?>
+
 
 <html lang="nl">
 <head>
@@ -40,7 +56,7 @@
 
 <body class="inloggenBody">
 <div id="login">
-    <h3 class="text-center text-white pt-5">Theathergroep Malbruggen Admin</h3>
+    <h3 class="text-center text-white pt-5">Theathergroep Malbruggen CMS</h3>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
@@ -67,4 +83,3 @@
 </body>
 
 </html>
-

@@ -2,15 +2,15 @@
 
 include_once('../includes/connection.php');
 
+session_start();
+
 if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
     $voorstellingNaam = $_POST['voorstellingNaam'];
     $voorstellingContent = nl2br($_POST['voorstellingContent']);
     $voorstellingPrijsRegulier = $_POST['voorstellingPrijsRegulier'];
     $voorstellingPrijsCJP = $_POST['voorstellingPrijsCJP'];
-    $voorstellingDatum1 = $_POST['voorstellingDatum1'];
-    $voorstellingDatum2 = $_POST['voorstellingDatum2'];
-    $voorstellingDatum3 = $_POST['voorstellingDatum3'];
-    $voorstellingDatum4 = $_POST['voorstellingDatum4'];
+    $voorstellingdatums = $_POST['voorstellingdatums'];
+
     $isActief = 1;
 
     $file_name = $_FILES['image']['name'];
@@ -56,22 +56,39 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
         }
 
     try{
-        $query = $pdo->prepare('INSERT INTO voorstelling (voorstellingNaam, voorstellingContent, voorstellingPrijsRegulier, voorstellingPrijsCJP, imagePath, voorstellingDatum1, voorstellingDatum2, voorstellingDatum3, voorstellingDatum4, isActief) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $query = $pdo->prepare('INSERT INTO voorstelling (voorstellingNaam, voorstellingContent, voorstellingPrijsRegulier, voorstellingPrijsCJP, imagePath, isActief) VALUES(?, ?, ?, ?, ?, ?)');
 
         $query->bindValue(1, $voorstellingNaam);
         $query->bindValue(2, $voorstellingContent);
         $query->bindValue(3, $voorstellingPrijsRegulier);
         $query->bindValue(4, $voorstellingPrijsCJP);
         $query->bindValue(5, $image_path);
-        $query->bindValue(6, $voorstellingDatum1);
-        $query->bindValue(7, $voorstellingDatum2);
-        $query->bindValue(8, $voorstellingDatum3);
-        $query->bindValue(9, $voorstellingDatum4);
-        $query->bindValue(10, $isActief);
+        $query->bindValue(6, $isActief);
 
-
-
+//        INSERT DE VOORSTELLING
         $query->execute();
+
+        //Nieuwste voorstelling ophalen
+        $query2 = "SELECT MAX(voorstellingID) AS voorstellingID FROM voorstelling";
+        $sql2 = $pdo->prepare($query2);
+        $sql2->execute(array());
+        $nieuwstevoorstelling = $sql2->fetch();
+        $nieuwstevoorstellingID = $nieuwstevoorstelling['voorstellingID'];
+
+
+        //INSERT VOOR VOORSTELLING DATUMS
+        foreach($voorstellingdatums as $voorstellingdatum) {
+
+            if($voorstellingdatum != NULL) {
+                $query3 = $pdo->prepare('INSERT INTO voorstellingdatums (voorstellingID, voorstellingDatum) VALUES (?, ?)');
+                $query3->bindValue(1, $nieuwstevoorstellingID);
+                $query3->bindValue(2, $voorstellingdatum);
+                $query3->execute();
+
+            }
+        }
+
+
     }
 
     catch (PDOException $e){
@@ -79,11 +96,17 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
         }
 
 
-        header('Location: voorstellingen.php');
+        header('Location: ');
     }
 }
 ?>
 <!--    Page Front-End-->
+
+
+<?php
+
+if (($_SESSION['logged_in'] == true)) {
+?>
 
 <html>
 <head>
@@ -116,10 +139,10 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
             <li class="nav-item active">
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Uitloggen</a>
+            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Uitloggen</button>
-        </form>
     </div>
 </nav>
 
@@ -155,25 +178,25 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
                 <div class="form-group row">
                     <label for="voorstellingDatum1" class="col-2 col-form-label">Datum 1</label>
                     <div class="col-10">
-                        <input class="form-control" name="voorstellingDatum1" type="date" value="2011-08-19" id="voorstellingDatum1">
+                        <input class="form-control" name=voorstellingdatums[] type="date" value="2011-08-19" id="voorstellingDatum1">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="voorstellingDatum2" class="col-2 col-form-label">Datum 2</label>
                     <div class="col-10">
-                        <input class="form-control" name="voorstellingDatum2" type="date" value="" id="voorstellingDatum2">
+                        <input class="form-control" name=voorstellingdatums[] type="date" value="" id="voorstellingDatum2">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="voorstellingDatum3" class="col-2 col-form-label">Datum 3</label>
                     <div class="col-10">
-                        <input class="form-control" name="voorstellingDatum3" type="date" value="" id="voorstellingDatum3">
+                        <input class="form-control" name=voorstellingdatums[] type="date" value="" id="voorstellingDatum3">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="voorstellingDatum4" class="col-2 col-form-label">Datum 4</label>
                     <div class="col-10">
-                        <input class="form-control" name="voorstellingDatum4" type="date" value="" id="voorstellingDatum4">
+                        <input class="form-control" name=voorstellingdatums[] type="date" value="" id="voorstellingDatum4">
                     </div>
                 </div>
 
@@ -185,3 +208,10 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
 <a href="../index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
 </body>
 </html>
+
+    <?php
+} else {
+    header('Location: inloggen.php');
+}
+?>
+

@@ -5,13 +5,7 @@ include_once('../includes/voorstelling.php');
 
 $voorstelling = new Voorstelling();
 
-$voorstellingen = $voorstelling->fetch_all();
 
-function getVoorstellingen($isActief) {
-
-
-
-}
 
 ?>
 
@@ -86,21 +80,16 @@ function getVoorstellingen($isActief) {
 
     <!--Voorstellingen-->
     <section class="voorstellingContainer">
-        <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
-        <h6 class="centerText">Hieronder staan al onze voorstellingen</h6>
+        <h1 class="centerText">Voorstellingen</h1>
+        <p class="centerText">Klik op een voorstelling voor meer informatie.</p>
 
-        <br>
-        <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
+        <section class="voorstellingContainer">
 
-        <div class="text-center">
-            <h3>Voorstelling 1</h3>
-            <a href="voorstellingdetails.php"><img src="https://via.placeholder.com/800x300"></a>
-        </div>
-
-        <div class="text-center">
-            <h3>Voorstelling 2</h3>
-            <a href="voorstellingdetails.php"><img src="https://via.placeholder.com/800x300"></a>
-        </div>
+            <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
+            <?=$voorstelling->getHtml(1)?>
+            <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
+            <?=$voorstelling->getHtml()?>
+        </section>
     </section>
 
 </main>
