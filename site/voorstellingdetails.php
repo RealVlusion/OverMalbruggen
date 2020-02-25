@@ -107,7 +107,7 @@ $teampVoorstellingdatums = $stmt2->fetch();
             ?>
 
 
-            <a href="voorstellingdetails.php"><img src="<?php echo $tempVoorstelling['imagePath']?>"></a>
+            <img src="<?php echo $tempVoorstelling['imagePath']?>">
             <h6><?php echo $tempVoorstelling['voorstellingContent']?></h6>
 
             <div class="container datesContent">
