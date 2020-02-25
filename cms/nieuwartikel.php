@@ -122,8 +122,6 @@ if (($_SESSION['logged_in'] == true)) {
                 </form>
             </main>
     </div>
-
-    <a href="../index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
     </body>
     </html>
 
