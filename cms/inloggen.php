@@ -5,6 +5,8 @@
     session_start();
     $_SESSION['logged_in'] = false;
 
+    print md5('TEST');
+
 
     if (isset($_POST['username'], $_POST['password'])) {
         $username = $_POST['username'];

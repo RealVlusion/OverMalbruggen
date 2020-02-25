@@ -5,23 +5,19 @@ include_once('../includes/voorstellingdatum.php');
 
 $Voorstellingdatum = new Voorstellingdatum();
 
-$mysqli = new mysqli("localhost","root","admin","overMalbruggenDb");
-
-// Check connection
-if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-    exit();
-}
-
+//Get voorstelling ID
 $voorstellingID = $_GET['id'];
 
 //Haal actuele voorstelling data op
-$result = mysqli_query($mysqli, "SELECT * FROM voorstelling WHERE voorstellingID = $voorstellingID ");
-$tempVoorstelling = mysqli_fetch_assoc($result);
+$stmt = $pdo->prepare("SELECT * FROM voorstelling WHERE voorstellingID = ?");
+$stmt->execute([$voorstellingID]);
+$tempVoorstelling = $stmt->fetch();
 
 //Haal actuele voorstellingdatums data op
-$result = mysqli_query($mysqli, "SELECT * FROM voorstellingdatums WHERE voorstellingID = $voorstellingID ");
-$teampVoorstellingdatums = mysqli_fetch_assoc($result);
+
+$stmt2 = $pdo->prepare("SELECT * FROM voorstellingdatums WHERE voorstellingID = ?");
+$stmt2->execute([$voorstellingID]);
+$teampVoorstellingdatums = $stmt2->fetch();
 
 ?>
 

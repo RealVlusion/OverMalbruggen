@@ -84,56 +84,55 @@
 
         <div class="ticketContainer">
             <section class="ticketForm">
-                <form>
+                <form  action="workshopprocess.php" method="POST">
                     <h2 class="formTitel">Inschrijven wekelijkse workshops</h2>
                     <h6>Om contact op te nemen kunt u het contactforumulier hieronder invullen. Wij proberen uw vraag/opmerking binnen 24h te behandelen.</h6>
 
                     <div class="form-group">
                         <label for="voornaam">Naam*</label>
-                        <input type="text" class="form-control" id="naam" placeholder="Naam*">
+                        <input type="text" class="form-control" name="naam" id="naam" placeholder="Naam*">
                     </div>
-
                     <div class="form-group">
                         <label for="email">E-mailadres*</label>
-                        <input type="email" class="form-control" required id="email" placeholder="E-mail*">
+                        <input type="email" class="form-control" name="email" required id="email" placeholder="E-mail*">
                     </div>
                     <div class="form-group">
                         <label for="telefoon">Telefoonnummer</label>
-                        <input type="numeric" class="form-control" required id="telefoon" placeholder="Telefoonnummer">
+                        <input type="numeric" class="form-control" name="telefoon" required id="telefoon" placeholder="Telefoonnummer">
                     </div>
                     <div class="form-group">
                         <label for="straatPlusHuisnummer">Straat + huisnr</label>
-                        <input type="text" class="form-control" required id="straatPlusHuisnummer" placeholder="Straat huisnummer">
+                        <input type="text" class="form-control" required name="straatPlusHuisnummer" id="straatPlusHuisnummer" placeholder="Straat huisnummer">
                     </div>
                     <div class="form-group">
                         <label for="postcode">Postcode</label>
-                        <input type="text" class="form-control" required id="postcode" placeholder="Postcode">
+                        <input type="text" class="form-control" required name="postcode" id="postcode" placeholder="Postcode">
                     </div>
                     <div class="form-group">
                         <label for="woonplaats">Woonplaats</label>
-                        <input type="text" class="form-control" required id="woonplaats" placeholder="Woonplaats">
+                        <input type="text" class="form-control" required name="woonplaats" id="woonplaats" placeholder="Woonplaats">
                     </div>
                     <p>Hoe wil je betalen?</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <input class="form-check-input" type="radio" name="betaalMethode" id="exampleRadios1" value="Ik betaal 12,50 euro per maand" checked>
                         <label class="form-check-label" for="exampleRadios1">
                             Ik betaal 12,50 euro per maand
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <input class="form-check-input" type="radio" name="betaalMethode" id="exampleRadios2" value="Ik heb een GelrePas dus betaal 1,25 euro per maand">
                         <label class="form-check-label" for="exampleRadios2">
                             Ik heb een GelrePas dus betaal 1,25 euro per maand
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <input class="form-check-input" type="radio" name="betaalMethode" id="exampleRadios2" value="Ik betaal in één keer 62,50 euro (voor 5 maanden workshops)">
                         <label class="form-check-label" for="exampleRadios2">
                             Ik betaal in één keer 62,50 euro (voor 5 maanden workshops)
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <input class="form-check-input" type="radio" name="betaalMethode" id="exampleRadios2" value="Ik betaal met mijn GelrePas in één keer 6,25 euro (voor 5 maanden workshops)">
                         <label class="form-check-label" for="exampleRadios2">
                             Ik betaal met mijn GelrePas in één keer 6,25 euro (voor 5 maanden workshops)
                         </label>
@@ -141,7 +140,7 @@
                     <div class="form-group">
                         <label for="opmerking">Heb je nog opmerkingen?<br> (graag Gelrepas-nummer invoeren indien van toepassing)
                         </label>
-                        <textarea class="form-control" placeholder="Opmerking" required id="opmerking" rows="3"></textarea>
+                        <textarea class="form-control" placeholder="Opmerking" name="opmerking" required id="opmerking" rows="3"></textarea>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="privacyVerklaring">
@@ -150,7 +149,7 @@
                         </label>
                     </div>
                     <br>
-                    <button type="button" class="btn btn-outline-light">Verstuur</button>
+                    <button type="submit" value="Send" class="btn btn-outline-light">Verstuur</button>
                 </form>
                 <hr>
 

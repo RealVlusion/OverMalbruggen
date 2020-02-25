@@ -80,28 +80,28 @@
 
         <div class="ticketContainer">
             <section class="ticketForm">
-                <form>
+                <form action="mailprocess.php" method="POST">
                     <h2 class="formTitel">Inschrijven gratis proefles</h2>
                     <h6>Om contact op te nemen kunt u het contactforumulier hieronder invullen. Wij proberen uw vraag/opmerking binnen 24h te behandelen.</h6>
 
                     <div class="form-group">
-                        <label for="voornaam">Naam*</label>
-                        <input type="text" class="form-control" id="naam" placeholder="Naam*">
+                        <label for="naam">Naam*</label>
+                        <input type="text" class="form-control" name="naam" id="naam" placeholder="Naam*">
                     </div>
 
                     <div class="form-group">
                         <label for="email">E-mailadres*</label>
-                        <input type="email" class="form-control" required id="email" placeholder="E-mail*">
+                        <input type="email" class="form-control" required name="email" id="email" placeholder="E-mail*">
                     </div>
                     <div class="form-group">
                         <label for="telefoon">Telefoonnummer</label>
-                        <input type="email" class="form-control" required id="telefoon" placeholder="Telefoonnummer">
+                        <input type="number" class="form-control" required name="telefoon" id="telefoon" placeholder="Telefoonnummer">
                     </div>
                     <div class="form-group">
                         <label for="opmerking">Opmerkingen</label>
-                        <textarea class="form-control" placeholder="Opmerking" required id="opmerking" rows="3"></textarea>
+                        <textarea class="form-control" placeholder="Opmerking" name="opmerking" required id="opmerking" rows="3"></textarea>
                     </div>
-                    <button type="button" class="btn btn-outline-light">Verstuur</button>
+                    <button type="submit" value="Send" class="btn btn-outline-light">Verstuur</button>
                 </form>
                 <hr>
 
