@@ -21,6 +21,7 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OverMalbruggen | Nieuwsartikel</title>
 
     <!--imports-->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
@@ -84,23 +85,17 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 
 <main>
     <div class="indexContent">
-
         <div class="artikelContent">
             <h1 class="centerText"><?php echo $artikel['nieuwsTitel']; ?></h1>
             <div class="d-flex justify-content-center">
                 <img class="card-img-top" src="<?php echo $artikel['imagePath']; ?>" alt="<?php echo $artikel['nieuwsTitel']; ?>">
-                </div>
+                </div><br>
             <p><?php echo $artikel['nieuwsContent'];?></p>
-
-
         </div>
-
-
-     </section>
-
-<!--     Comment section   -->
-
     </div>
+
+    <!--     Comment section   -->
+
 </main>
 
 <footer>

@@ -27,6 +27,7 @@ $teampVoorstellingdatums = $stmt2->fetch();
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OverMalbruggen | Voorstellingdetails</title>
 
     <!--imports-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -95,7 +96,6 @@ $teampVoorstellingdatums = $stmt2->fetch();
 <main>
 
         <section class="voorstellingContainer">
-
             <?php
                 $voorstellingNaam = $tempVoorstelling['voorstellingNaam'];
                 if ($tempVoorstelling['isActief'] == 1) {
@@ -112,29 +112,19 @@ $teampVoorstellingdatums = $stmt2->fetch();
                     <h6><?php echo $tempVoorstelling['voorstellingContent']?></h6>
                 </div>
 
+                <div class="container datesContent">
+                    <h3 class="centerText">Speeltijden</h3>
+                    <div class="row text-center">
+                        <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ] opvoeringContainer">
+                            <ul class="event-list datesContent">
 
-<!--                <div class=\"text-center\">-->
-<!--                    <h3>{$voorstelling['voorstellingNaam']}</h3>-->
-<!--                    <a href='voorstellingdetails.php?id={$voorstelling['voorstellingID']}'><img src=\"{$voorstelling['imagePath']}\"></a>-->
-<!--                </div>-->
-<!--                <a href='voorstellingen.php?id={$voorstelling['voorstellingID']}'>Verwijder</a>-->
-<!--                <a href='editvoorstelling.php?editID={$voorstelling['voorstellingID']}'>Pas aan</a>-->
+                                <?=$Voorstellingdatum->getVoorstellingDates($voorstellingID)?>
 
-            <div class="container datesContent">
-                <h3 class="centerText">Speeltijden</h3>
-                <div class="row text-center">
-                    <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ] opvoeringContainer">
-                        <ul class="event-list datesContent">
-
-                            <?=$Voorstellingdatum->getVoorstellingDates($voorstellingID)?>
-
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
             </section>
-        </section>
-
         </section>
 
 </main>

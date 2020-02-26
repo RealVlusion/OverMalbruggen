@@ -18,6 +18,20 @@ class Voorstelling {
             $html .= "<div class=\"text-center\">
                         <h3>{$voorstelling['voorstellingNaam']}</h3>
                        <a href='voorstellingdetails.php?id={$voorstelling['voorstellingID']}'><img src=\"{$voorstelling['imagePath']}\"></a>
+                    </div>";
+
+        }
+        return $html;
+    }
+
+    public function getHtmlCMS($isActief = 0)
+    {
+        $voorstellingen = $this->fetch_all($isActief);
+        $html = "";
+        foreach ($voorstellingen as $voorstelling) {
+            $html .= "<div class=\"text-center\">
+                        <h3>{$voorstelling['voorstellingNaam']}</h3>
+                       <a href='voorstellingdetails.php?id={$voorstelling['voorstellingID']}'><img src=\"{$voorstelling['imagePath']}\"></a>
                     </div>
                     <a href='voorstellingen.php?id={$voorstelling['voorstellingID']}'>Verwijder</a>
                     <a href='editvoorstelling.php?editID={$voorstelling['voorstellingID']}'>Pas aan</a>";

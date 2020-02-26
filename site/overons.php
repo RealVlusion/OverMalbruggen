@@ -14,6 +14,7 @@ $teammember = $team->fetch_all();
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OverMalbruggen | Over ons</title>
 
     <!--imports-->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>

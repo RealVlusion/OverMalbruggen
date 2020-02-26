@@ -15,6 +15,7 @@ $voorstelling = new Voorstelling();
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OverMalbruggen | Voorstellingen</title>
 
     <!--imports-->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
@@ -87,6 +88,7 @@ $voorstelling = new Voorstelling();
 
             <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
             <?=$voorstelling->getHtml(1)?>
+            <br>
             <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
             <?=$voorstelling->getHtml()?>
         </section>
