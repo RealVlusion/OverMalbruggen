@@ -93,9 +93,9 @@ $teampVoorstellingdatums = $stmt2->fetch();
 </header>
 
 <main>
-    <div class="indexContent">
 
-        <section class="indexIntro">
+        <section class="voorstellingContainer">
+
             <?php
                 $voorstellingNaam = $tempVoorstelling['voorstellingNaam'];
                 if ($tempVoorstelling['isActief'] == 1) {
@@ -106,9 +106,19 @@ $teampVoorstellingdatums = $stmt2->fetch();
             }
             ?>
 
+            <section class="voorstellingContainer">
+                <div class="text-center">
+                    <img src="<?php echo $tempVoorstelling['imagePath']?>">
+                    <h6><?php echo $tempVoorstelling['voorstellingContent']?></h6>
+                </div>
 
-            <img src="<?php echo $tempVoorstelling['imagePath']?>">
-            <h6><?php echo $tempVoorstelling['voorstellingContent']?></h6>
+
+<!--                <div class=\"text-center\">-->
+<!--                    <h3>{$voorstelling['voorstellingNaam']}</h3>-->
+<!--                    <a href='voorstellingdetails.php?id={$voorstelling['voorstellingID']}'><img src=\"{$voorstelling['imagePath']}\"></a>-->
+<!--                </div>-->
+<!--                <a href='voorstellingen.php?id={$voorstelling['voorstellingID']}'>Verwijder</a>-->
+<!--                <a href='editvoorstelling.php?editID={$voorstelling['voorstellingID']}'>Pas aan</a>-->
 
             <div class="container datesContent">
                 <h3 class="centerText">Speeltijden</h3>
@@ -122,12 +132,11 @@ $teampVoorstellingdatums = $stmt2->fetch();
                     </div>
                 </div>
             </div>
+            </section>
         </section>
 
         </section>
 
-
-    </div>
 </main>
 
 <footer>
