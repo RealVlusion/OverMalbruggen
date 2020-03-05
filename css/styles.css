@@ -198,5 +198,104 @@ footer a:visited{
 }
 /*FOOTER END*/
 
+/*MEDIA QUERIES*/
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+body{
+    background-color: green;
+}
+
+    .indexContent{
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .indexIntro{
+        width: 90%;
+        padding: 0;
+    }
+
+    .indexContent{
+        max-width: 90%;
+    }
+
+    .flexItem{
+        width: 45%;
+        padding: 0.3rem;
+    }
+
+    .sponsorItem{
+        margin: 1px;
+        margin-bottom: 0.2rem;
+        max-width: 10rem;
+    }
+
+    .sponsorContainer{
+        width: 85%;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .teamContainer{
+        padding: 0;
+    }
+
+    .ticketForm{
+        padding: 0;
+        width: 85%;
+    }
+
+    #vrijwilliger{
+        padding-bottom: 2rem;
+    }
+
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    body{
+        background-color: yellow;
+    }
+
+    .indexContent{
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .indexIntro{
+        width: 90%;
+        padding: 0;
+    }
+
+    .indexContent{
+        max-width: 90%;
+    }
+
+    .flexItem{
+        width: 90%;
+    }
+
+    .sponsorItem{
+        margin: 1px;
+        margin-bottom: 0.3rem;
+        max-width: 7rem;
+    }
+
+    .teamContainer{
+        padding: 0;
+    }
+
+    .ticketForm{
+        padding: 0;
+        width: 85%;
+    }
+
+    #vrijwilliger{
+        padding-bottom: 2rem;
+    }
+
+}
+
 
 

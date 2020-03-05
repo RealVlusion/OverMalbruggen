@@ -68,7 +68,7 @@
 
 <main class="ticketBody">
     <div class="indexContent">
-        <section class="meedoenSection">
+        <section class="meedoenSection" id="vrijwilliger">
             <div class="col">
                 <h2 class="centerText">Als vrijwilliger of stage/werk?</h2>
                 <h6>Wil je helpen met het productie proces, les komen geven in een kunstzinnige disipline zoals dans of muziek, tijdens de voorstellingen achter de bar staan? Voor de spelers koken? Helpen met licht en geluid? Kostuums? En ga zo maar door…!?</h6>

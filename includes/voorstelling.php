@@ -17,7 +17,7 @@ class Voorstelling {
         foreach ($voorstellingen as $voorstelling) {
             $html .= "<div class=\"text-center\">
                         <h3>{$voorstelling['voorstellingNaam']}</h3>
-                       <a href='voorstellingdetails.php?id={$voorstelling['voorstellingID']}'><img src=\"{$voorstelling['imagePath']}\"></a>
+                       <a href='voorstellingdetails.php?id={$voorstelling['voorstellingID']}'><img class=\"img-fluid\" src=\"{$voorstelling['imagePath']}\"></a>
                     </div>";
 
         }
@@ -31,7 +31,7 @@ class Voorstelling {
         foreach ($voorstellingen as $voorstelling) {
             $html .= "<div class=\"text-center\">
                         <h3>{$voorstelling['voorstellingNaam']}</h3>
-                       <a href='voorstellingdetails.php?id={$voorstelling['voorstellingID']}'><img src=\"{$voorstelling['imagePath']}\"></a>
+                       <a href='voorstellingdetails.php?id={$voorstelling['voorstellingID']}'><img class=\"img-fluid\" src=\"{$voorstelling['imagePath']}\"></a>
                     </div>
                     <a href='voorstellingen.php?id={$voorstelling['voorstellingID']}'>Verwijder</a>
                     <a href='editvoorstelling.php?editID={$voorstelling['voorstellingID']}'>Pas aan</a>";
