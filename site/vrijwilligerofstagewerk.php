@@ -43,8 +43,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="gratisproefles.php">Gratis proefles</a>
-                    <a class="dropdown-item" href="#">Wekelijkse workshops</a>
-                    <a class="dropdown-item" href="#">Vrijwillger of stage/werk</a>
+                    <a class="dropdown-item" href="wekelijkseworkshops.php">Wekelijkse workshops</a>
+                    <a class="dropdown-item" href="vrijwilligerofstagewerk.php">Vrijwillger of werk/stage</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -55,6 +55,11 @@
             </li>
         </ul>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href=""><button type="button" class="btn btn-outline-light">Inschrijven nieuwsbrief</button></a>
+        </li>
+    </ul>
 </nav>
 
 <header>
@@ -71,9 +76,8 @@
         <section class="meedoenSection" id="vrijwilliger">
             <div class="col">
                 <h2 class="centerText">Als vrijwilliger of stage/werk?</h2>
-                <h6>Wil je helpen met het productie proces, les komen geven in een kunstzinnige disipline zoals dans of muziek, tijdens de voorstellingen achter de bar staan? Voor de spelers koken? Helpen met licht en geluid? Kostuums? En ga zo maar door…!?</h6>
-
-                <h6>Theater OverMalbruggen heeft altijd mensen nodig die het leuk vinden een steentje bij te dragen en achter onze Missie en Visie staan. Dus ben je op zoek naar vrijwilligerswerk, een stage of werkervaringsplek mail dan vooral even naar: info@overmalbruggen.nl<br>
+                <h5>Wil je helpen met het productie proces, les komen geven in een kunstzinnige disipline zoals dans of muziek, tijdens de voorstellingen achter de bar staan? Voor de spelers koken? Helpen met licht en geluid? Kostuums? En ga zo maar door…!?</h5>
+                <h5>Theater OverMalbruggen heeft altijd mensen nodig die het leuk vinden een steentje bij te dragen en achter onze Missie en Visie staan. Dus ben je op zoek naar vrijwilligerswerk, een stage of werkervaringsplek mail dan vooral even naar: info@overmalbruggen.nl<br>
         </section>
 
     </div>

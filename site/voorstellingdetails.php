@@ -70,8 +70,8 @@ $teampVoorstellingdatums = $stmt2->fetch();
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="gratisproefles.php">Gratis proefles</a>
-                    <a class="dropdown-item" href="#">Wekelijkse workshops</a>
-                    <a class="dropdown-item" href="#">Vrijwillger of stage/werk</a>
+                    <a class="dropdown-item" href="wekelijkseworkshops.php">Wekelijkse workshops</a>
+                    <a class="dropdown-item" href="vrijwilligerofstagewerk.php">Vrijwillger of werk/stage</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -82,6 +82,11 @@ $teampVoorstellingdatums = $stmt2->fetch();
             </li>
         </ul>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href=""><button type="button" class="btn btn-outline-light">Inschrijven nieuwsbrief</button></a>
+        </li>
+    </ul>
 </nav>
 
 <header>
@@ -113,6 +118,7 @@ $teampVoorstellingdatums = $stmt2->fetch();
                 </div>
 
                 <div class="container datesContent">
+                    <a href="tickets.php"><button type="button" class="btn btn-danger">Tickets</button></a>
                     <h3 class="centerText">Speeltijden</h3>
                     <div class="row text-center">
                         <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ] opvoeringContainer">

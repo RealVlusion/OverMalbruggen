@@ -60,8 +60,8 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="gratisproefles.php">Gratis proefles</a>
-                    <a class="dropdown-item" href="#">Wekelijkse workshops</a>
-                    <a class="dropdown-item" href="#">Vrijwillger of stage/werk</a>
+                    <a class="dropdown-item" href="wekelijkseworkshops.php">Wekelijkse workshops</a>
+                    <a class="dropdown-item" href="vrijwilligerofstagewerk.php">Vrijwillger of werk/stage</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -72,6 +72,11 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
             </li>
         </ul>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href=""><button type="button" class="btn btn-outline-light">Inschrijven nieuwsbrief</button></a>
+        </li>
+    </ul>
 </nav>
 
 <header>

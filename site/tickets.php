@@ -1,3 +1,14 @@
+<?php
+
+include_once('../includes/connection.php');
+include_once('../includes/voorstelling.php');
+
+$voorstelling = new Voorstelling();
+
+$stmt = $pdo->query('SELECT voorstellingNaam FROM voorstelling');
+
+?>
+
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -43,8 +54,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="gratisproefles.php">Gratis proefles</a>
-                    <a class="dropdown-item" href="#">Wekelijkse workshops</a>
-                    <a class="dropdown-item" href="#">Vrijwillger of stage/werk</a>
+                    <a class="dropdown-item" href="wekelijkseworkshops.php">Wekelijkse workshops</a>
+                    <a class="dropdown-item" href="vrijwilligerofstagewerk.php">Vrijwillger of werk/stage</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -55,6 +66,11 @@
             </li>
         </ul>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href=""><button type="button" class="btn btn-outline-light">Inschrijven nieuwsbrief</button></a>
+        </li>
+    </ul>
 </nav>
 
 <header>
@@ -91,8 +107,9 @@
                     <div class="form-group">
                         <label for="welkeVoorstelling">Welke voorstelling</label>
                         <select class="form-control" id="welkeVoorstelling">
-                            <option>Zaterdag 1 februari om 19:30</option>
-                            <option>Zondag 2 februari om 13:00</option>
+                            <?php while ($row = $stmt->fetch()) {
+                                echo  "<option value='$row[voorstellingNaam]'>$row[voorstellingNaam]</option>";
+                            }?>
                         </select>
                     </div>
                     <div class="form-group">
