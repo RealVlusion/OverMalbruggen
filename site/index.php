@@ -66,7 +66,13 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
         </ul>
+
     </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href=""><button type="button" class="btn btn-outline-light">Inschrijven nieuwsbrief</button></a>
+        </li>
+    </ul>
 </nav>
 
 <header>
