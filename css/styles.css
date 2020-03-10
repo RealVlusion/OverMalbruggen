@@ -119,23 +119,6 @@ a:visited{
     width: 25%;
 }
 
-/*Sponsors*/
-.sponsorContainer{
-    width: 100%;
-    margin: auto;
-    padding: 1rem;
-}
-
-.sponsorsFlexBox {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.sponsorItem {
-    margin: 5px;
-    max-width: 11rem;
-}
-
 /*Voorstellingen*/
 .content{
     margin: auto;
@@ -225,18 +208,6 @@ body{
         padding: 0.3rem;
     }
 
-    .sponsorItem{
-        margin: 1px;
-        margin-bottom: 0.2rem;
-        max-width: 10rem;
-    }
-
-    .sponsorContainer{
-        width: 85%;
-        margin: auto;
-        padding: 1rem;
-    }
-
     .teamContainer{
         padding: 0;
     }
@@ -274,12 +245,6 @@ body{
 
     .flexItem{
         width: 90%;
-    }
-
-    .sponsorItem{
-        margin: 1px;
-        margin-bottom: 0.3rem;
-        max-width: 7rem;
     }
 
     .teamContainer{
