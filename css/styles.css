@@ -26,6 +26,11 @@
     height: 30rem;
 }
 
+.indexCarousel{
+    width: 80%;
+    margin: auto;
+}
+
 /*Nieuws*/
 .candyText{
     margin-top: 1rem;
@@ -63,10 +68,7 @@
     margin: auto;
 }
 
-.artikelContent img{
-    max-width: 40rem;
-    max-height: 25rem;
-}
+.img-fluid{width: 60rem}
 
 /*Meedoen*/
 .meedoenSection{
@@ -201,6 +203,11 @@ body{
 
     .indexContent{
         max-width: 90%;
+    }
+
+    .indexCarousel{
+        width: 100%;
+        margin: auto;
     }
 
     .flexItem{

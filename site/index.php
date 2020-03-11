@@ -85,7 +85,6 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 </header>
 
 <main>
-    <div class="indexContent">
     <section class="indexCarousel">
         <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -124,6 +123,7 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
             </a>
         </div>
     </section>
+    <div class="indexContent">
 
     <section class="indexIntro">
         <h1 class="centerText">Welkom</h1>
