@@ -1,13 +1,4 @@
-<?php
 
-include_once('../includes/connection.php');
-include_once('../includes/voorstelling.php');
-
-$voorstelling = new Voorstelling();
-
-$stmt = $pdo->query('SELECT voorstellingNaam FROM voorstelling');
-
-?>
 
 <html lang="nl">
 <head>
@@ -91,38 +82,36 @@ $stmt = $pdo->query('SELECT voorstellingNaam FROM voorstelling');
 
         <div class="ticketContainer">
             <section class="ticketForm">
-                <form>
+                <form action="ticketprocess.php" method="POST">
                     <h2 class="formTitel">Tickets</h2>
                     <h6>Om contact op te nemen kunt u het contactforumulier hieronder invullen. Wij proberen uw vraag/opmerking binnen 24h te behandelen.</h6>
 
                     <div class="form-group">
-                        <label for="voornaam">Naam*</label>
-                        <input type="text" class="form-control" id="voornaam" placeholder="Naam*">
+                        <label for="naam">Naam*</label>
+                        <input type="text" class="form-control" name="naam" id="naam" placeholder="Naam*">
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">E-mailadres*</label>
-                        <input type="email" class="form-control" required id="exampleFormControlInput1" placeholder="E-mail*">
+                        <input type="email" class="form-control" name="email" required id="exampleFormControlInput1" placeholder="E-mail*">
                     </div>
                     <div class="form-group">
                         <label for="welkeVoorstelling">Welke voorstelling</label>
-                        <select class="form-control" id="welkeVoorstelling">
-                            <?php while ($row = $stmt->fetch()) {
-                                echo  "<option value='$row[voorstellingNaam]'>$row[voorstellingNaam]</option>";
-                            }?>
+                        <select class="form-control" name="welkeVoorstelling" id="welkeVoorstelling">
+                            <option value='TEST'>TEST</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="aantalTicketsRegulier">Hoeveel reguliere kaartjes wil je (6 euro)?</label>
-                        <input type="number" class="form-control" id="aantalTicketsRegulier" placeholder="0">
+                        <input type="number" class="form-control" name="aantalTicketsRegulier" id="aantalTicketsRegulier" placeholder="0">
                     </div>
                     <div class="form-group">
                         <label for="aantalTicketsGelrepas">Hoeveel kaartjes met Gelrepas korting wil je (3 euro)?</label>
-                        <input type="number" class="form-control" id="aantalTicketsGelrepas" placeholder="0">
+                        <input type="number" class="form-control" name="aantalTicketsGelrepas" id="aantalTicketsGelrepas" placeholder="0">
                     </div>
                     <div class="form-group">
                         <label for="gelrepasNummer">Wat is je Gelrepasnummer?</label>
-                        <input type="number" class="form-control" id="gelrepasNummer" placeholder="0">
+                        <input type="number" class="form-control" name="gelrepasNummer" id="gelrepasNummer" placeholder="0">
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="ticketsVoorwaarde">
@@ -132,9 +121,9 @@ $stmt = $pdo->query('SELECT voorstellingNaam FROM voorstelling');
                     </div>
                     <div class="form-group">
                         <label for="opmerking">Heb je nog opmerkingen? (bv vrijkaartjes)</label>
-                        <textarea class="form-control" placeholder="Opmerking" required id="opmerking" rows="3"></textarea>
+                        <textarea class="form-control" placeholder="Opmerking" name="opmerking" required id="opmerking" rows="3"></textarea>
                     </div>
-                    <button type="button" class="btn btn-outline-light">Verstuur</button>
+                    <button type="submit" value="Send" class="btn btn-outline-light">Verstuur</button>
                 </form>
                 <hr>
 

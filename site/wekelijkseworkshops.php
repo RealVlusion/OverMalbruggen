@@ -89,7 +89,7 @@
 
         <div class="ticketContainer">
             <section class="ticketForm">
-                <form  action="workshopprocess.php" method="POST">
+                <form action="workshopprocess.php" method="POST">
                     <h2 class="formTitel">Inschrijven wekelijkse workshops</h2>
                     <h6>Om contact op te nemen kunt u het contactforumulier hieronder invullen. Wij proberen uw vraag/opmerking binnen 24h te behandelen.</h6>
 
