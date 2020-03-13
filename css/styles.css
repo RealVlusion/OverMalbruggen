@@ -11,7 +11,7 @@
 }
 
 .indexContent{
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
     padding: 3rem;
 }
@@ -41,9 +41,9 @@
 }
 
 .flexItem{
-    padding: 1rem;
+    padding: 0.7rem;
     background-color: lightgrey;
-    width: 30%;
+    width: 20%;
     margin: 10px;
 }
 
@@ -184,7 +184,12 @@ footer a:visited{
 /*FOOTER END*/
 
 /*MEDIA QUERIES*/
+@media screen and (max-width: 1400px) {
+    .flexItem{
+        width: 30%;
 
+    }
+}
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
 body{
