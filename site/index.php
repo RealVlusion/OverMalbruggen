@@ -96,20 +96,19 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 
                 <div class="carousel-item item active">
                     <a href="https://www.levelswebdesign.nl/Portfolio/Secu/index.php">
-                        <img class="d-block w-100" src="https://via.placeholder.com/150C/O https://placeholder.com/"
+                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
                              alt="First slide">
                 </div>
                 </a>
 
-
                 <div class="carousel-item item">
                     <a href="https://www.levelswebdesign.nl/Portfolio/JansenExclusive/index.php">
-                        <img class="d-block w-100" src="https://via.placeholder.com/150C/O https://placeholder.com/"
+                        <img class="d-block w-100" src="https://st.depositphotos.com/2627989/4694/i/950/depositphotos_46941945-stock-photo-spring-forrest-sunset.jpg"
                              alt="Second slide">
                 </div>
                 </a>
                 <div class="carousel-item item">
-                    <img class="d-block w-100" src="https://via.placeholder.com/150C/O https://placeholder.com/"
+                    <img class="d-block w-100" src="https://thumbs.werkaandemuur.nl/1/150a1a31f52e9c42e22430c28478fa04/817x600/thumbnail/fit.jpg"
                          alt="Third slide">
                 </div>
             </div>
