@@ -38,12 +38,10 @@ Nav img{
 }
 
 .flexItem{
-    padding: 1rem;
+    padding: 0.7rem;
     background-color: lightgrey;
-    width: 30%;
+    width: 20%;
     margin: 10px;
-    min-height: 30rem;
-    max-height: 40rem;
 }
 
 .flexContainer{
@@ -103,4 +101,12 @@ Nav img{
     margin-top: 4rem;
 }
 
+/*MEDIA QUERIES*/
+/* On screens that are 1400px or less */
+@media screen and (max-width: 1400px) {
+    .flexItem{
+        width: 30%;
+
+    }
+}
 

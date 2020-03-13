@@ -59,10 +59,10 @@ if (($_SESSION['logged_in'] == true)) {
             <li class="nav-item">
                 <a class="nav-link" href="team.php">Team</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="nieuws.php">Nieuws</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
             <li class="nav-item">

@@ -184,13 +184,14 @@ footer a:visited{
 /*FOOTER END*/
 
 /*MEDIA QUERIES*/
+/* On screens that are 1400px or less */
 @media screen and (max-width: 1400px) {
     .flexItem{
         width: 30%;
 
     }
 }
-/* On screens that are 992px or less, set the background color to blue */
+/* On screens that are 992px or less */
 @media screen and (max-width: 992px) {
 body{
     background-color: green;

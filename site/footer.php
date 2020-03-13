@@ -15,7 +15,6 @@
                         <li><a href="index.php">Home</a></li>
                         <li><a href="overons.php">Over</a></li>
                         <li><a href="nieuws.php">Nieuws</a></li>
-                        <li><a href="overons.php">Meedoen?</a></li>
                         <li><a href="voorstellingen.php">Voorstellingen</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
