@@ -93,7 +93,7 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
         <div class="artikelContent">
             <h1 class="centerText"><?php echo $artikel['nieuwsTitel']; ?></h1>
             <div class="d-flex justify-content-center">
-                <img class="img-fluid" src="<?php echo $artikel['imagePath']; ?>" alt="<?php echo $artikel['nieuwsTitel']; ?>">
+                <img class="img-fluid imgNieuws" src="<?php echo $artikel['imagePath']; ?>" alt="<?php echo $artikel['nieuwsTitel']; ?>">
                 </div><br>
             <p><?php echo $artikel['nieuwsContent'];?></p>
         </div>

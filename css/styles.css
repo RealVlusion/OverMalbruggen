@@ -69,7 +69,7 @@
     margin: auto;
 }
 
-.img-fluid{height: 40rem}
+.imgNieuws{height: 40rem}
 
 /*Meedoen*/
 .meedoenSection{
@@ -253,7 +253,7 @@ body{
         max-height: 15rem;
     }
 
-    .img-fluid{
+    .imgNieuws{
         height: auto;
     }
 
