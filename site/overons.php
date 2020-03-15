@@ -128,7 +128,7 @@ $teammember = $team->fetch_all();
                     <?php } ?>
                 </div>
         </section>
-        <h2 class="centerText">Onze Sponsors</h2>
+        <h2 class="centerText">Mede mogelijk gemaakt door</h2>
         <div class="row text-center text-lg-left">
 
             <div class="col-lg-3 col-md-4 col-6">

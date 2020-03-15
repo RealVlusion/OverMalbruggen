@@ -4,20 +4,15 @@ include_once('../includes/connection.php');
 
 session_start();
 
-$mysqli = new mysqli("localhost","root","admin","overMalbruggenDb");
-
-// Check connection
-if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-    exit();
-}
-
 $editID = $_GET['editID'];
 
-$result = mysqli_query($mysqli, "SELECT * FROM team WHERE teamlidID = $editID ");
-$tempTeamlid = mysqli_fetch_assoc($result);
+//Verzamel huidige gegevens van teamlid
+$stmt = $pdo->prepare("SELECT * FROM team WHERE teamlidID = ?");
+$stmt->execute(array($editID));
+$tempTeamlid = $stmt->fetch();
 
-//UPDATE TEAMLID
+
+//Klik op UPDATE
 if (isset($_POST['nw_update'])) {
     $title = $_POST['title'];
     $content = nl2br($_POST['content']);
@@ -27,15 +22,13 @@ if (isset($_POST['nw_update'])) {
     var_dump($content);
     var_dump($rol);
 
-    $sql = "UPDATE team SET teamlidNaam = '$title', teamlidOmschrijving = '$content', teamlidRol = '$rol' WHERE teamlidID = $editID";
+    //Update teamlid
+    $query = "UPDATE team SET teamlidNaam = '$title', teamlidOmschrijving = '$content', teamlidRol = '$rol' WHERE teamlidID = $editID";
+    $sql = $pdo->prepare($query);
+    $sql->execute(array());
 
-    if ($mysqli->query($sql) === TRUE) {
-        echo "Succesvol aangepast";
-    } else {
-        echo "Error updating record: " . $mysqli->error;
-    }
 
-    header('Location: ');
+    header('Location: team.php');
 }
 ?>
 
@@ -105,7 +98,7 @@ if (($_SESSION['logged_in'] == true)) {
                     <label for="teamlidRol">Rol</label>
                     <input type="text" name="teamlidRol" class="form-control" value="<?php echo $tempTeamlid['teamlidRol'];?>" required id="teamlidRol" placeholder="Rol">
                 </div>
-                <input type="submit" name="nw_update" value="NW_Update"/>
+                <input type="submit" name="nw_update" value="Update teamlid"/>
             </form>
         </main>
 </div>

@@ -4,20 +4,12 @@ include_once('../includes/connection.php');
 
 session_start();
 
-$mysqli = new mysqli("localhost","root","admin","overMalbruggenDb");
-
-// Check connection
-if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-    exit();
-}
-
 $editID = $_GET['editID'];
 
 //Haal actuele voorstelling data op
-$result = mysqli_query($mysqli, "SELECT * FROM voorstelling WHERE voorstellingID = $editID ");
-$tempVoorstelling = mysqli_fetch_assoc($result);
-
+$stmt = $pdo->prepare("SELECT * FROM voorstelling WHERE voorstellingID = ?");
+$stmt->execute(array($editID));
+$tempVoorstelling = $stmt->fetch();
 
 //Update de acuele data
     if (isset($_POST['nw_update'])) {
@@ -64,17 +56,8 @@ $tempVoorstelling = mysqli_fetch_assoc($result);
 
             }
         }
-
-
-//        if ($mysqli->query($sql) === TRUE) {
-//            echo "Succesvol aangepast";
-//        } else {
-//            echo "Error updating record: " . $mysqli->error;
-//        }
-
         header('Location: ');
     }
-
 
 ?>
 

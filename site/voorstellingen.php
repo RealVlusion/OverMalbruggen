@@ -91,7 +91,7 @@ $voorstelling = new Voorstelling();
 
         <section class="voorstellingContainer">
 
-            <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Actief</span></h3>
+            <h3 class="centerText">Voorstellingen <span class="badge badge-success">Actief</span></h3>
             <?=$voorstelling->getHtml(1)?>
             <br>
             <h3 class="centerText">Voorstellingen <span class="badge badge-danger">Archief</span></h3>
