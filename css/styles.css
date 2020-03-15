@@ -27,9 +27,10 @@
 }
 
 .indexCarousel{
-    width: 80%;
+    width: 65%;
     margin: auto;
 }
+
 
 /*Nieuws*/
 .candyText{
@@ -68,7 +69,7 @@
     margin: auto;
 }
 
-.img-fluid{width: 60rem}
+.img-fluid{height: 40rem}
 
 /*Meedoen*/
 .meedoenSection{
@@ -188,7 +189,10 @@ footer a:visited{
 @media screen and (max-width: 1400px) {
     .flexItem{
         width: 30%;
-
+    }
+    .indexCarousel{
+        width: 80%;
+        margin: auto;
     }
 }
 /* On screens that are 992px or less */
@@ -216,6 +220,10 @@ body{
         margin: auto;
     }
 
+    .carousel-inner > .item {
+        height: 400px;
+    }
+
     .flexItem{
         width: 45%;
         padding: 0.3rem;
@@ -240,6 +248,13 @@ body{
 @media screen and (max-width: 600px) {
     body{
         background-color: yellow;
+    }
+    .indexCarousel img{
+        max-height: 15rem;
+    }
+
+    .img-fluid{
+        height: auto;
     }
 
     .indexContent{
