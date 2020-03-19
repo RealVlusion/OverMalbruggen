@@ -113,7 +113,7 @@ if (($_SESSION['logged_in'] == true)) {
         <br /><br />
         <?php } ?>
         <main class="addContainer">
-            <h2>Voeg een voorstelling toe</h2>
+            <h2>Pas een voorstelling aan</h2>
             <form action="" method="post" autocomplete="off"  enctype = "multipart/form-data">
                 <div class="form-group">
                     <label for="voorstellingNaam">Naam</label>
@@ -162,7 +162,7 @@ if (($_SESSION['logged_in'] == true)) {
                         <option value="0">Archief</option>
                     </select>
                 </div>
-                <input type="submit" name="nw_update" value="NW_Update"/>
+                <input type="submit" name="nw_update" value="Pas aan"/>
             </form>
         </main>
 </div>
