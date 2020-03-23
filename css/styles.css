@@ -127,6 +127,12 @@ a:visited{
     margin: auto;
 }
 
+.voorstellingContent{
+    width: 60%;
+    margin: auto;
+    padding: 2rem;
+}
+
 .voorstellingContainer{
     margin-bottom: 2rem;
 }

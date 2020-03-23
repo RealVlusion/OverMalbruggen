@@ -9,6 +9,7 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
     $voorstellingContent = nl2br($_POST['voorstellingContent']);
     $voorstellingPrijsRegulier = $_POST['voorstellingPrijsRegulier'];
     $voorstellingPrijsCJP = $_POST['voorstellingPrijsCJP'];
+    $voorstellingPrijsGelrepas = $_POST['voorstellingPrijsGelrepas'];
     $voorstellingdatums = $_POST['voorstellingdatums'];
 
     $isActief = 1;
@@ -56,14 +57,15 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
         }
 
     try{
-        $query = $pdo->prepare('INSERT INTO voorstelling (voorstellingNaam, voorstellingContent, voorstellingPrijsRegulier, voorstellingPrijsCJP, imagePath, isActief) VALUES(?, ?, ?, ?, ?, ?)');
+        $query = $pdo->prepare('INSERT INTO voorstelling (voorstellingNaam, voorstellingContent, voorstellingPrijsRegulier, voorstellingPrijsCJP, voorstellingPrijsGelrepas, imagePath, isActief) VALUES(?, ?, ?, ?, ?, ?, ?)');
 
         $query->bindValue(1, $voorstellingNaam);
         $query->bindValue(2, $voorstellingContent);
         $query->bindValue(3, $voorstellingPrijsRegulier);
         $query->bindValue(4, $voorstellingPrijsCJP);
-        $query->bindValue(5, $image_path);
-        $query->bindValue(6, $isActief);
+        $query->bindValue(5, $voorstellingPrijsGelrepas);
+        $query->bindValue(6, $image_path);
+        $query->bindValue(7, $isActief);
 
 //        INSERT DE VOORSTELLING
         $query->execute();
@@ -171,6 +173,10 @@ if (($_SESSION['logged_in'] == true)) {
                 <div class="form-group">
                     <label for="voorstellingPrijsCJP">Prijs CJP</label>
                     <input type="number" name="voorstellingPrijsCJP" class="form-control" required id="voorstellingPrijsCJP" placeholder="Prijs CJP">
+                </div>
+                <div class="form-group">
+                    <label for="voorstellingPrijsCJP">Prijs Gelrepas</label>
+                    <input type="number" name="voorstellingPrijsGelrepas" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsGelrepas'];?>" required id="voorstellingPrijsGelrepas" placeholder="Prijs Gelrepas">
                 </div>
                 <div class="form-group">
                     <input required type = "file" name = "image" />

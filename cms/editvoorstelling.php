@@ -17,6 +17,7 @@ $tempVoorstelling = $stmt->fetch();
         $voorstellingContent = nl2br($_POST['voorstellingContent']);
         $voorstellingPrijsRegulier = $_POST['voorstellingPrijsRegulier'];
         $voorstellingPrijsCJP = $_POST['voorstellingPrijsCJP'];
+        $voorstellingPrijsGelrepas = $_POST['voorstellingPrijsGelrepas'];
         $voorstellingdatums = $_POST['voorstellingdatums'];
         $isActief = $_POST['isActief'];
 
@@ -37,7 +38,7 @@ $tempVoorstelling = $stmt->fetch();
 
         //Update voorstelling
         $query = "UPDATE voorstelling SET voorstellingNaam = '$voorstellingNaam', voorstellingContent = '$voorstellingContent', voorstellingPrijsRegulier = '$voorstellingPrijsRegulier',
-        voorstellingPrijsCJP = '$voorstellingPrijsCJP', isActief = $isActief  WHERE voorstellingID = $editID";
+        voorstellingPrijsCJP = '$voorstellingPrijsCJP', voorstellingPrijsGelrepas = '$voorstellingPrijsGelrepas', isActief = $isActief  WHERE voorstellingID = $editID";
         $sql = $pdo->prepare($query);
         $sql->execute(array());
 
@@ -130,6 +131,10 @@ if (($_SESSION['logged_in'] == true)) {
                 <div class="form-group">
                     <label for="voorstellingPrijsCJP">Prijs CJP</label>
                     <input type="number" name="voorstellingPrijsCJP" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsCJP'];?>" required id="voorstellingPrijsCJP" placeholder="Prijs CJP">
+                </div>
+                <div class="form-group">
+                    <label for="voorstellingPrijsCJP">Prijs Gelrepas</label>
+                    <input type="number" name="voorstellingPrijsGelrepas" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsGelrepas'];?>" required id="voorstellingPrijsGelrepas" placeholder="Prijs Gelrepas">
                 </div>
                 <div class="form-group row">
                     <label for="voorstellingDatum1" class="col-2 col-form-label">Datum 1</label>

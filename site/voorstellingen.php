@@ -84,6 +84,7 @@ $voorstelling = new Voorstelling();
 
 <main>
 
+    <div class="voorstellingContent">
     <!--Voorstellingen-->
     <section class="voorstellingContainer">
         <h1 class="centerText">Voorstellingen</h1>
@@ -98,7 +99,7 @@ $voorstelling = new Voorstelling();
             <?=$voorstelling->getHtml()?>
         </section>
     </section>
-
+    </div>
 </main>
 
 <footer>
