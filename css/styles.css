@@ -27,7 +27,7 @@
 }
 
 .indexCarousel{
-    width: 65%;
+    width: 60%;
     margin: auto;
 }
 
@@ -197,7 +197,7 @@ footer a:visited{
         width: 30%;
     }
     .indexCarousel{
-        width: 80%;
+        width: 75%;
         margin: auto;
     }
 }
