@@ -57,7 +57,7 @@ $tempVoorstelling = $stmt->fetch();
 
             }
         }
-        header('Location: ');
+        header('Location: voorstellingen.php');
     }
 
 ?>
