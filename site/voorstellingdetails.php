@@ -34,8 +34,8 @@ $teampVoorstellingdatums = $stmt2->fetch();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/voorstelling.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
 
 
 
@@ -92,7 +92,7 @@ $teampVoorstellingdatums = $stmt2->fetch();
 <header>
     <div class="jumbotron jumbotron-fluid text-center">
         <div class="container">
-            <h1 class="display-4">OverMalbruggen</h1>
+            <h1 class="display-4 headerTitel">OverMalbruggen</h1>
             <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
     </div>
@@ -130,6 +130,10 @@ $teampVoorstellingdatums = $stmt2->fetch();
                             </ul>
                         </div>
                     </div>
+                    <h3 class="centerText">Prijzen</h3>
+                    <h4>Regulier €<?php echo $tempVoorstelling['voorstellingPrijsRegulier']?></h4>
+                    <h4>CJP €<?php echo $tempVoorstelling['voorstellingPrijsCJP']?></h4>
+                    <h4>Gelrepas €<?php echo $tempVoorstelling['voorstellingPrijsGelrepas']?></h4>
                 </div>
             </section>
         </section>
