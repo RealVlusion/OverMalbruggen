@@ -25,7 +25,7 @@
                         <li>E-mail: info@overmalbruggen.nl</li>
                         <li>Tel:</li>
                         <li>Stad: Arnhem</li>
-                        <li>Straat: </li>
+                        <li>Straat: Eimerssingel-Oost 266</li>
 
                     </ul>
                 </div>
