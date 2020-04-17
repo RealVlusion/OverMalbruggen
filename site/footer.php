@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-5 col-xs-12 about-company">
                     <h2>OverMalbruggen</h2>
-                    <p class="pr-5 text-white-50">Hier een korte beschrijving van Malbruggen</p>
+                    <p class="pr-5 text-white-50">Kom spelen, kunst maken en mensen ontmoeten!</p>
                     <img src="../img/LogoBrugWhiteRed.png">
                     <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
                 </div>
@@ -23,7 +23,6 @@
                     <h4 class="mt-lg-0 mt-sm-3">Contact</h4>
                     <ul class="m-0 p-0">
                         <li>E-mail: info@overmalbruggen.nl</li>
-                        <li>Tel:</li>
                         <li>Stad: Arnhem</li>
                         <li>Straat: Eimerssingel-Oost 266</li>
 

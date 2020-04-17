@@ -2,10 +2,15 @@
 
 include_once('../includes/connection.php');
 include_once('../includes/nieuwsartikel.php');
+include_once('../includes/voorstelling.php');
 
 $nieuwsartikel = new Nieuwsartikel;
 
 $nieuwsartikels = $nieuwsartikel->fetch_all();
+
+$voorstelling = new Voorstelling();
+
+$voorstellingen = $voorstelling->getSlideshowNewest();
 
 ?>
 
@@ -16,6 +21,7 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OverMalbruggen | Home</title>
+    <meta name="keywords" content="OverMalbruggen,Theater,Theatergroep,Malburgen">
 
     <!--imports-->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
@@ -87,30 +93,15 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 <main>
     <section class="indexCarousel">
         <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-                <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-            </ol>
             <div class="carousel-inner" role="listbox">
+                <h1 class="centerText">Nieuwste voorstellingen</h1>
 
-                <div class="carousel-item item active">
-                    <a href="https://www.levelswebdesign.nl/Portfolio/Secu/index.php">
-                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                             alt="First slide">
-                </div>
+
+                <?=$voorstelling->getSlideshowNewest()?>
+
                 </a>
 
-                <div class="carousel-item item">
-                    <a href="https://www.levelswebdesign.nl/Portfolio/JansenExclusive/index.php">
-                        <img class="d-block w-100" src="https://st.depositphotos.com/2627989/4694/i/950/depositphotos_46941945-stock-photo-spring-forrest-sunset.jpg"
-                             alt="Second slide">
-                </div>
-                </a>
-                <div class="carousel-item item">
-                    <img class="d-block w-100" src="https://thumbs.werkaandemuur.nl/1/150a1a31f52e9c42e22430c28478fa04/817x600/thumbnail/fit.jpg"
-                         alt="Third slide">
-                </div>
+
             </div>
             <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -124,11 +115,11 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
     </section>
     <div class="indexContent">
 
-    <section class="indexIntro">
-        <h1 class="centerText">Welkom</h1>
-        <h6>Welkom op de website van theater OverMalbruggen. Wij zijn de theatergroep in Malburgen te Arnhem die bedoeld is om elkaar te ontmoeten,
-            met mensen met verschillende (culturele) achtergronden te verbinden en elkaars verhaal leren kennen en natuurlijk een hoop lol te maken samen!</h6>
-    </section>
+        <section class="indexIntro">
+            <h1 class="centerText">Welkom</h1>
+            <h6>Welkom op de website van theater OverMalbruggen. Wij zijn de theatergroep in Malburgen te Arnhem die bedoeld is om elkaar te ontmoeten,
+                met mensen met verschillende (culturele) achtergronden te verbinden en elkaars verhaal leren kennen en natuurlijk een hoop lol te maken samen!</h6>
+        </section>
 
         <section class="indexNieuws">
             <h1 class="centerText">Nieuws</h1>
@@ -151,7 +142,7 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 
             </section>
         </section>
-    </section>
+        </section>
 
     </div>
 </main>
