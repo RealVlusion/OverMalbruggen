@@ -97,6 +97,7 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
                 <h1 class="centerText">Nieuwste voorstellingen</h1>
 
 
+
                 <?=$voorstelling->getSlideshowNewest()?>
 
                 </a>
