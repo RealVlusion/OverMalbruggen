@@ -132,8 +132,17 @@ $teampVoorstellingdatums = $stmt2->fetch();
                     </div>
                     <h3 class="centerText">Prijzen</h3>
                     <h4>Regulier €<?php echo $tempVoorstelling['voorstellingPrijsRegulier']?></h4>
-                    <h4>CJP €<?php echo $tempVoorstelling['voorstellingPrijsCJP']?></h4>
-                    <h4>Gelrepas €<?php echo $tempVoorstelling['voorstellingPrijsGelrepas']?></h4>
+
+                    <?php if ($tempVoorstelling['voorstellingPrijsCJP'] > 0){
+                        echo "<h4>CJP €"; echo $tempVoorstelling['voorstellingPrijsCJP']; echo"</h4>";
+                    }
+                    ?>
+
+                    <?php if ($tempVoorstelling['voorstellingPrijsGelrepas'] > 0){
+                        echo "<h4>Gelrepas €"; echo $tempVoorstelling['voorstellingPrijsGelrepas']; echo"</h4>";
+                    }
+                    ?>
+
                 </div>
             </section>
         </section>

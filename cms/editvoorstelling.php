@@ -130,11 +130,11 @@ if (($_SESSION['logged_in'] == true)) {
                 </div>
                 <div class="form-group">
                     <label for="voorstellingPrijsCJP">Prijs CJP</label>
-                    <input type="number" name="voorstellingPrijsCJP" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsCJP'];?>" required id="voorstellingPrijsCJP" placeholder="Prijs CJP">
+                    <input type="number" name="voorstellingPrijsCJP" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsCJP'];?>" id="voorstellingPrijsCJP" placeholder="Prijs CJP">
                 </div>
                 <div class="form-group">
                     <label for="voorstellingPrijsCJP">Prijs Gelrepas</label>
-                    <input type="number" name="voorstellingPrijsGelrepas" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsGelrepas'];?>" required id="voorstellingPrijsGelrepas" placeholder="Prijs Gelrepas">
+                    <input type="number" name="voorstellingPrijsGelrepas" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsGelrepas'];?>" id="voorstellingPrijsGelrepas" placeholder="Prijs Gelrepas">
                 </div>
                 <div class="form-group row">
                     <label for="voorstellingDatum1" class="col-2 col-form-label">Datum 1</label>

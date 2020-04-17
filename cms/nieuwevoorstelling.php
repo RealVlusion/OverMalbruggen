@@ -172,11 +172,11 @@ if (($_SESSION['logged_in'] == true)) {
                 </div>
                 <div class="form-group">
                     <label for="voorstellingPrijsCJP">Prijs CJP</label>
-                    <input type="number" name="voorstellingPrijsCJP" class="form-control" required id="voorstellingPrijsCJP" placeholder="Prijs CJP">
+                    <input type="number" name="voorstellingPrijsCJP" class="form-control" id="voorstellingPrijsCJP" placeholder="Prijs CJP">
                 </div>
                 <div class="form-group">
                     <label for="voorstellingPrijsCJP">Prijs Gelrepas</label>
-                    <input type="number" name="voorstellingPrijsGelrepas" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsGelrepas'];?>" required id="voorstellingPrijsGelrepas" placeholder="Prijs Gelrepas">
+                    <input type="number" name="voorstellingPrijsGelrepas" class="form-control" value="<?php echo $tempVoorstelling['voorstellingPrijsGelrepas'];?>" id="voorstellingPrijsGelrepas" placeholder="Prijs Gelrepas">
                 </div>
                 <div class="form-group">
                     <input required type = "file" name = "image" />
