@@ -52,6 +52,15 @@ class Voorstelling {
         return $query->fetchAll();
     }
 
+    public function fetchActive() {
+        global $pdo;
+
+        $query = $pdo->prepare("SELECT * FROM voorstelling WHERE isActief = ?   ");
+        $query->execute(array(1));
+
+        return $query->fetchAll();
+    }
+
     public function getSlideshowNewest()
     {
         $voorstellingen = $this->fetchNewest();

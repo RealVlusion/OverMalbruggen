@@ -1,4 +1,13 @@
+<?php
 
+include_once('../includes/connection.php');
+include_once('../includes/voorstelling.php');
+
+$voorstelling = new Voorstelling();
+
+$voorstellingen = $voorstelling->fetchActive();
+
+?>
 
 <html lang="nl">
 <head>
@@ -98,7 +107,10 @@
                     <div class="form-group">
                         <label for="welkeVoorstelling">Welke voorstelling</label>
                         <select class="form-control" name="welkeVoorstelling" id="welkeVoorstelling">
-                            <option value='TEST'>TEST</option>
+                            <!--                            <option value='TEST'>TEST</option>-->
+                            <?php foreach ($voorstellingen as $voorstelling) { ?>
+                                <option id="voorstelling" value='<?php echo $voorstelling['voorstellingNaam']?>'><?php echo $voorstelling['voorstellingNaam']?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">

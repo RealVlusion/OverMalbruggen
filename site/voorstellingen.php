@@ -6,7 +6,6 @@ include_once('../includes/voorstelling.php');
 $voorstelling = new Voorstelling();
 
 
-
 ?>
 
 <html lang="nl">
