@@ -118,8 +118,9 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
             <h1 class="centerText">Nieuws</h1>
             <section class="flexContainer" >
 
+                <?php $reversednieuwsartikels = array_reverse($nieuwsartikels);?>
 
-                <?php foreach ($nieuwsartikels as $nieuwsartikel) { ?>
+                <?php foreach ($reversednieuwsartikels as $nieuwsartikel) { ?>
                     <section class="flexItem">
                         <div class="candy_content">
                             <div class="candyText">

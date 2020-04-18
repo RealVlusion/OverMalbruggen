@@ -87,8 +87,9 @@ $nieuwsartikels = $nieuwsartikel->fetch_all();
 
         <section class="indexNieuws">
             <section class="flexContainer" >
+                <?php $reversednieuwsartikels = array_reverse($nieuwsartikels);?>
 
-                <?php foreach ($nieuwsartikels as $nieuwsartikel) { ?>
+                <?php foreach ($reversednieuwsartikels as $nieuwsartikel) { ?>
                     <section class="flexItem">
                         <div class="candy_content">
                             <div class="candyText">

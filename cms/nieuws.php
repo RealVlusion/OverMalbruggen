@@ -93,14 +93,15 @@ if (($_SESSION['logged_in'] == true)) {
         <section class="indexNieuws">
             <section class="flexContainer" >
 
-                <?php foreach ($nieuwsartikels as $nieuwsartikel) { ?>
+                <?php $reversednieuwsartikels = array_reverse($nieuwsartikels);?>
+
+                <?php foreach ($reversednieuwsartikels as $nieuwsartikel) { ?>
                     <section class="flexItem">
                         <div class="candy_content">
                         <div class="candyText">
                             <img class="card-img-top" src="<?php echo $nieuwsartikel['imagePath']; ?>" alt="<?php echo $nieuwsartikel['nieuwsTitel']; ?>">
                             <h5><?php echo $nieuwsartikel['nieuwsTitel']; ?></h5>
                             <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
-
 
                             <!--Verwijder het artikel-->
                             <a href='nieuws.php?deleteID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Verwijder</a>
