@@ -22,6 +22,9 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OverMalbruggen | Home</title>
     <meta name="keywords" content="OverMalbruggen,Theater,Theatergroep,Malburgen">
+    <link rel="icon"
+          type="image/png"
+          href="../img/NavbarLogoWhite.png">
 
     <!--imports-->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
