@@ -203,9 +203,9 @@ footer a:visited{
 }
 /* On screens that are 992px or less */
 @media screen and (max-width: 992px) {
-body{
-    background-color: green;
-}
+/*body{*/
+/*    background-color: green;*/
+/*}*/
 
     .indexContent{
         max-width: 100%;
@@ -248,9 +248,9 @@ body{
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
-    body{
-        background-color: yellow;
-    }
+    /*body{*/
+    /*    background-color: yellow;*/
+    /*}*/
     .indexCarousel img{
         max-height: 15rem;
     }
