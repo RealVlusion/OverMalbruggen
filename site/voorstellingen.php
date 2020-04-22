@@ -1,7 +1,7 @@
 <?php
 
-include_once('../includes/connection.php');
-include_once('../includes/voorstelling.php');
+include_once('includes/connection.php');
+include_once('includes/voorstelling.php');
 
 $voorstelling = new Voorstelling();
 

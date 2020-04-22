@@ -16,8 +16,8 @@ if (isset($_POST['nw_update'])) {
     $nieuwsTitel = $_POST['nieuwsTitel'];
     $content = nl2br($_POST['content']);
 
-    var_dump($nieuwsTitel);
-    var_dump($content);
+//    var_dump($nieuwsTitel);
+//    var_dump($content);
 
     //Update teamlid
     $query = "UPDATE nieuws SET nieuwsTitel = '$nieuwsTitel', nieuwsContent = '$content' WHERE nieuwsID = $editID";

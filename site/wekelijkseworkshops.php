@@ -145,7 +145,7 @@
                     <div class="form-group">
                         <label for="opmerking">Heb je nog opmerkingen?<br> (graag Gelrepas-nummer invoeren indien van toepassing)
                         </label>
-                        <textarea class="form-control" placeholder="Opmerking" name="opmerking" required id="opmerking" rows="3"></textarea>
+                        <textarea class="form-control" placeholder="Opmerking" name="opmerking" id="opmerking" rows="3"></textarea>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="privacyVerklaring">

@@ -10,7 +10,7 @@ $opmerking = $_POST['opmerking'];
 
 $formcontent="Van $name \n Email: $email \n Telefoon: $telefoon \n Straat en Huisnummer: $straatPlusHuisnummer \n Postcode: $postcode \n Woonplaats: $woonplaats
 \n Betaalmethode: $betaalMethode \n Opmerking: $opmerking";
-$recipient = "info@levelswebdesign.nl";
+$recipient = "info@overmalbruggen.nl";
 $subject = "Inschrijven wekelijkse workshops";
 mail($recipient, $subject, $formcontent) or die("Er ging iets fout!");
 header('Location: wekelijkseworkshops.php ');

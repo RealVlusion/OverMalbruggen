@@ -1,7 +1,7 @@
 <?php
 
-include_once('../includes/connection.php');
-include_once('../includes/team.php');
+include_once('includes/connection.php');
+include_once('includes/team.php');
 
 $team = new Team;
 $teammember = $team->fetch_all();
@@ -133,37 +133,37 @@ $teammember = $team->fetch_all();
 
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-20">
-                    <img class="img-fluid" src="https://overmalbruggen.nl/wp-content/uploads/2020/02/leefbaarheid-gelderland-logo.jpg" alt="">
+                    <img class="img-fluid" src="img/sponsors/LeefbaarGelderland.jpg" alt="LeefbaarGelderland">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="https://overmalbruggen.nl/wp-content/uploads/2020/02/73504677_586161155456564_4124457532435464192_o.jpg" alt="">
+                    <img class="img-fluid" src="img/sponsors/ZFonds.jpg" alt="ZFonds">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="https://overmalbruggen.nl/wp-content/uploads/2020/02/vsb4-1024x810.jpg" alt="">
+                    <img class="img-fluid" src="img/sponsors/VSBFonds.jpg" alt="VSBFonds">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="https://overmalbruggen.nl/wp-content/uploads/2020/02/Logo-Wijkplatform-Malburgen-e1581951909906-226x300.jpg" alt=""><figcaption class="figure-caption text-right">Malburgen Oost</figcaption>
+                    <img class="img-fluid" src="img/sponsors/LogoWijkplatform.jpg" alt="LogoWijkplatform"><figcaption class="figure-caption text-right">Malburgen Oost</figcaption>
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="https://overmalbruggen.nl/wp-content/uploads/2020/02/uitnacht-arnhem.png" alt="">
+                    <img class="img-fluid" src="img/sponsors/UitnachtArnhem.png" alt="UitnachtArnhem">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="https://overmalbruggen.nl/wp-content/uploads/2020/02/logo-bruishuis.png" alt="">
+                    <img class="img-fluid" src="img/sponsors/LogoBruishuis.png" alt="LogoBruishuis">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="http://overmalbruggen.nl/wp-content/uploads/2020/02/Ruimtekoers-e1581952276925.png" alt="">
+                    <img class="img-fluid" src="img/sponsors/LogoRuimtekoers.png" alt="LogoRuimtekoers">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">

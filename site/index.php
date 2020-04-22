@@ -1,8 +1,10 @@
 <?php
 
-include_once('../includes/connection.php');
-include_once('../includes/nieuwsartikel.php');
-include_once('../includes/voorstelling.php');
+ini_set('display_errors', 1);
+
+include_once('includes/connection.php');
+include_once('includes/nieuwsartikel.php');
+include_once('includes/voorstelling.php');
 
 $nieuwsartikel = new Nieuwsartikel;
 
@@ -22,9 +24,7 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OverMalbruggen | Home</title>
     <meta name="keywords" content="OverMalbruggen,Theater,Theatergroep,Malburgen">
-    <link rel="icon"
-          type="image/png"
-          href="../img/NavbarLogoWhite.png">
+    <link rel="icon" type="image/png" href="../img/NavbarLogoWhite.png">
 
     <!--imports-->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
@@ -34,8 +34,7 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://overmalbruggen.nl/css/styles.css">
 
 </head>
 

@@ -1,7 +1,7 @@
 <?php
 
-include_once('../includes/connection.php');
-include_once('../includes/nieuwsartikel.php');
+include_once('includes/connection.php');
+include_once('includes/nieuwsartikel.php');
 
 $nieuwsartikel = new Nieuwsartikel;
 

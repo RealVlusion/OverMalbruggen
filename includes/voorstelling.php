@@ -36,7 +36,7 @@ class Voorstelling {
                        <img class=\"img-fluid\" src=\"{$voorstelling['imagePath']}\">
                     </div>
                     <a href='voorstellingen.php?id={$voorstelling['voorstellingID']}'>Verwijder</a>
-                    <a href='editvoorstelling.php?editID={$voorstelling['voorstellingID']}'>Pas aan</a>";
+                    <a href='editvoorstelling.php?editID={$voorstelling['voorstellingID']}'>Pas aan</a><hr>";
 
         }
         return $html;

@@ -1,7 +1,7 @@
 <?php
 
-include_once('../includes/connection.php');
-include_once('../includes/voorstellingdatum.php');
+include_once('includes/connection.php');
+include_once('includes/voorstellingdatum.php');
 
 $Voorstellingdatum = new Voorstellingdatum();
 

@@ -4,11 +4,6 @@ session_start();
 
 ?>
 
-<?php
-
-
-if (($_SESSION['logged_in'] == true)) {
-?>
 
 <html lang="nl">
 <head>
@@ -80,8 +75,3 @@ if (($_SESSION['logged_in'] == true)) {
 
 </html>
 
-    <?php
-} else {
-    header('Location: inloggen.php');
-}
-?>

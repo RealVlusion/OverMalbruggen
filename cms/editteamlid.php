@@ -18,15 +18,10 @@ if (isset($_POST['nw_update'])) {
     $content = nl2br($_POST['content']);
     $rol = $_POST['teamlidRol'];
 
-    var_dump($title);
-    var_dump($content);
-    var_dump($rol);
-
     //Update teamlid
     $query = "UPDATE team SET teamlidNaam = '$title', teamlidOmschrijving = '$content', teamlidRol = '$rol' WHERE teamlidID = $editID";
     $sql = $pdo->prepare($query);
     $sql->execute(array());
-
 
     header('Location: team.php');
 }

@@ -50,7 +50,7 @@ if (isset($_POST['voorstellingNaam'], $_POST['voorstellingContent'])) {
         if(empty($errors)==true) {
             $image_path = "../uploads/".$file_name;
             move_uploaded_file($file_tmp,$image_path);
-            echo "Foto met succes geupload";
+            echo "Voorstelling succesvol aangemaakt";
 
         }else{
             print_r($errors);

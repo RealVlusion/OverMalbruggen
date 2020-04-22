@@ -1,5 +1,6 @@
 <?php
 
+ini_set('display_errors', 1);
 include_once('../includes/connection.php');
 
 session_start();
@@ -32,7 +33,7 @@ $tempVoorstelling = $stmt->fetch();
         }
 
         //DELETE ALLE BESTAANDE DATUMS
-        $query4 = "DELETE FROM voorstellingDatums WHERE voorstellingID = $editID";
+        $query4 = "DELETE FROM voorstellingdatums WHERE voorstellingID = $editID";
         $sql4 = $pdo->prepare($query4);
         $sql4->execute(array());
 
@@ -43,7 +44,7 @@ $tempVoorstelling = $stmt->fetch();
         $sql->execute(array());
 
         //Update voorstellingdatums
-        $query2 = "UPDATE voorstellingdatums SET voorstellingID =  , voorstellingDatum = ";
+//        $query2 = "UPDATE voorstellingdatums SET voorstellingID =  , voorstellingDatum = ";
 
 
         //INSERT VOOR VOORSTELLING DATUMS

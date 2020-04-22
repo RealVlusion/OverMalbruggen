@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 .opvoeringContainer{
 
@@ -13,7 +13,6 @@
 
     margin:0;
 }
-
 
 .event-list > li {
     background-color: rgb(255, 255, 255);

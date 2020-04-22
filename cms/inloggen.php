@@ -1,20 +1,15 @@
-    <?php
-
+<?php session_start();
+    ini_set('display_errors', 1);
     include_once('../includes/connection.php');
-
-    session_start();
     $_SESSION['logged_in'] = false;
-
-    print md5('TEST');
-
-
-    if (isset($_POST['username'], $_POST['password'])) {
+//    print md5('TEST');
+   if (isset($_POST['username'], $_POST['password'])) {
         $username = $_POST['username'];
         $password = md5($_POST['password']);
 
-        var_dump($username);
-        var_dump($password);
-        var_dump( $_SESSION['logged_in']);
+//        var_dump($username);
+//        var_dump($password);
+//               var_dump($_SESSION['logged_in']);
 
         if (empty($username) or empty($password)) {
             $error = 'All fields must be filled in';
@@ -23,16 +18,15 @@
 
             $query->bindValue(1, $username);
             $query->bindValue(2, $password);
-
             $query->execute();
-
             $num = $query->rowCount();
+
 
             if ($num == 1) {
                 // user entered correct details
                 $_SESSION['logged_in'] = true;
-                header('Location: index.php');
-                exit();
+                header('Location:index.php');
+
             } else {
                 // user entered false details
                 $error = 'Incorrect details';
@@ -40,10 +34,10 @@
         }
     }
 
-    if (($_SESSION['logged_in'] == true)) {
-        header('Location: index.php');
-    }
-        ?>
+//    if (($_SESSION['logged_in'] == true)) {
+//        header('Location:index.php');
+//    }
+?>
 
 
 <html lang="nl">
@@ -58,7 +52,7 @@
 
 <body class="inloggenBody">
 <div id="login">
-    <h3 class="text-center text-white pt-5">Theathergroep Malbruggen CMS</h3>
+    <h3 class="text-center text-white pt-5">Theatergroep OverMalbruggen CMS</h3>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
@@ -75,6 +69,7 @@
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-outline-danger btn-md" value="Log in">
+                            <a href="https://overmalbruggen.nl/">Terug naar OverMalbruggen</a>
                         </div>
                     </form>
                 </div>

@@ -76,7 +76,6 @@
 
         <section class="meedoenSection">
 
-
                 <h5>Vanaf februari 2020 is het weer mogelijk om een proefles te komen bij Theatergroep OverMalbruggen. Sterker nog, deze maand mag je de hele maand vrijblijvend mee doen om te kijken of je vanaf maart met ons mee wil repeteren!</h5>
                 <h5>Schrijf je dus snel in voor een gratis proefles via onderstaande formulier in. Ook als je elders in Arnhem woont of net buiten de leeftijdscategorie valt ben je welkom!</h5>
                 <h5>Tijd:<br>
