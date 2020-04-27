@@ -48,6 +48,9 @@ session_start();
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="logout.php">Uitloggen</a>
             </li>
         </ul>

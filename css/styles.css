@@ -10,6 +10,13 @@
     margin: 0px;
 }
 
+.jumboImage {
+    background-image: url("../uploads/Banner.JPG");
+    background-size: cover;
+    color: white;
+
+}
+
 .indexContent{
     max-width: 90%;
     margin: auto;
@@ -31,6 +38,10 @@
     margin: auto;
 }
 
+/*Over ons*/
+.sponsorImg{
+    width: 40%;
+}
 
 /*Nieuws*/
 .candyText{
@@ -128,7 +139,19 @@ a:visited{
 }
 
 .voorstellingContent{
+    width: 25%;
+    margin: auto;
+    padding: 2rem;
+}
+
+.voorstellingDetailContent{
     width: 55%;
+    margin: auto;
+    padding: 2rem;
+}
+
+.voorstellingImg{
+    width: 50%;
     margin: auto;
     padding: 2rem;
 }
@@ -200,6 +223,11 @@ footer a:visited{
         width: 75%;
         margin: auto;
     }
+
+    /*Over ons*/
+    .sponsorImg{
+        width: 60%;
+    }
 }
 /* On screens that are 992px or less */
 @media screen and (max-width: 992px) {
@@ -242,6 +270,11 @@ footer a:visited{
 
     #vrijwilliger{
         padding-bottom: 2rem;
+    }
+
+    /*Over ons*/
+    .sponsorImg{
+        width: 60%;
     }
 
 }
@@ -296,6 +329,18 @@ footer a:visited{
         padding: 2rem;
     }
 
+    .voorstellingImg{
+        width: 80%;
+        margin: auto;
+        padding: 2rem;
+    }
+
+    .voorstellingDetailContent{
+        width: 95%;
+        margin: auto;
+        padding: 2rem;
+    }
+
     .headerTitel{
         font-size: 2rem;
     }
@@ -306,6 +351,11 @@ footer a:visited{
 
     .meedoenSection {
         width: 95%;
+    }
+
+    /*Over ons*/
+    .sponsorImg{
+        width: 80%;
     }
 
 }

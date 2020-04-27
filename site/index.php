@@ -71,6 +71,9 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
         </ul>
@@ -84,7 +87,7 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
 </nav>
 
 <header>
-    <div class="jumbotron jumbotron-fluid text-center">
+    <div class="jumbotron jumbotron-fluid jumboImage text-center">
         <div class="container">
             <h1 class="display-4 headerTitel">OverMalbruggen</h1>
             <p class="lead">Theatergroep</p>

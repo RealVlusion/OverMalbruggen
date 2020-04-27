@@ -9,6 +9,8 @@ if (isset($_POST['title'], $_POST['content'])) {
     $teamlidOmschrijving = nl2br($_POST['content']);
     $teamlidRol = $_POST['teamlidRol'];
 
+    //Image processing
+
     $file_name = $_FILES['image']['name'];
     $file_size = $_FILES['image']['size'];
     $file_tmp = $_FILES['image']['tmp_name'];
@@ -90,6 +92,9 @@ if (($_SESSION['logged_in'] == true)) {
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="nieuws.php">Voorstellingen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Uitloggen</a>

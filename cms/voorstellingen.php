@@ -66,6 +66,9 @@ if (($_SESSION['logged_in'] == true)) {
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="logout.php">Uitloggen</a>
             </li>
         </ul>
@@ -73,7 +76,7 @@ if (($_SESSION['logged_in'] == true)) {
 </nav>
 
 <main>
-    <section class="cmsContent">
+    <section class="voorstellingCMScontent">
         <h1 class="centerText">Voorstellingen</h1>
         <p class="centerText">Hier kun je een voorstelling toevoegen of verwijderen.</p>
         <a href="nieuwevoorstelling.php"> <button type="button" class="btn btn-outline-danger">Nieuwe voorstelling</button></a>

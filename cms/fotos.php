@@ -1,35 +1,28 @@
 <?php
 
 include_once('../includes/connection.php');
+include_once('../includes/image.php');
 
 session_start();
 
-$editID = $_GET['editID'];
+$image = new Image();
 
-//Verzamel huidige gegevens van artikel
-$stmt = $pdo->prepare("SELECT * FROM nieuws WHERE nieuwsID = ?");
-$stmt->execute(array($editID));
-$tempArtikel = $stmt->fetch();
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
 
-//Klik op UPDATE
-if (isset($_POST['nw_update'])) {
-    $nieuwsTitel = $_POST['nieuwsTitel'];
-    $content = nl2br($_POST['content']);
+    try {
+        $sql = $pdo->prepare("DELETE FROM galleryimage WHERE galleryID = :gallery_id");
+        $sql->execute(array(':gallery_id' => $id));
+    }
 
-//    var_dump($nieuwsTitel);
-//    var_dump($content);
+    catch (PDOException $e){
+        print $e;
+    }
 
-    //Update teamlid
-    $query = "UPDATE nieuws SET nieuwsTitel = '$nieuwsTitel', nieuwsContent = '$content' WHERE nieuwsID = $editID";
-    $sql = $pdo->prepare($query);
-    $sql->execute(array());
-
-
-    header('Location: nieuws.php');
+    header('Location: fotos.php');
 }
-?>
 
-<!--    Page Front-End-->
+?>
 
 <?php
 
@@ -43,6 +36,7 @@ if (($_SESSION['logged_in'] == true)) {
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
               integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/cms.css">
+        <link rel="stylesheet" type="text/css" href="../css/gallery.css">
 
     </head>
 
@@ -62,13 +56,13 @@ if (($_SESSION['logged_in'] == true)) {
                 <li class="nav-item">
                     <a class="nav-link" href="team.php">Team</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="nieuws.php">Nieuws</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="nieuws.php">Voorstellingen</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="fotos.php">Foto's</a>
                 </li>
                 <li class="nav-item">
@@ -85,21 +79,19 @@ if (($_SESSION['logged_in'] == true)) {
         <small style="color:#aa0000"><?php echo $error; ?>
             <br /><br />
             <?php } ?>
-            <main class="addContainer">
-                <h2>Pas artikel aan</h2>
-                <form action="" method="post" autocomplete="off"  enctype = "multipart/form-data">
-                    <div class="form-group">
-                        <label for="Titel">Titel</label>
-                        <input type="text" name="nieuwsTitel" class="form-control" required id="Titel" placeholder="Titel">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Content</label>
-                        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" required placeholder="Content" rows="3"></textarea>
-                    </div>
-                    <input type="submit" name="nw_update" value="Update artikel"/>
-                </form>
+            <main>
+                <h1 class="centerText">Foto's</h1>
+                <p class="centerText">Hier kun je foto's toevoegen of verwijderen.</p>
+                <a href="nieuwefoto.php"><button type="button" class="btn btn-outline-danger">Nieuwe foto</button></a>
+                <section class="imageGallery">
+
+                    <?=$image->getHtmlCMS()?>
+
+                </section>
             </main>
     </div>
+
+    <a href="../site/index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
     </body>
     </html>
 
@@ -108,3 +100,4 @@ if (($_SESSION['logged_in'] == true)) {
     header('Location: inloggen.php');
 }
 ?>
+

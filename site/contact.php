@@ -51,6 +51,9 @@
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link active" href="contact.php">Contact</a>
             </li>
         </ul>
@@ -81,6 +84,10 @@
                 Mail ons: info@overmalbruggen.nl<br><br>
 
                 Of kom meedoen met een proefles in het Huis voor de Wijk! ( Eimerssingel-Oost 266, 6834 CZ Arnhem )</h6>
+            <br>
+            <a href="AlgemeneVoorwaarden.php"><h5>Algemene Voorwaarden</h5></a>
+            <a href="PrivacyVerklaring.php"><h5>Privacy Verklaring</h5></a>
+            <a href="BeleidsplanOverMalbruggen.php"><h5>Beleidsplan</h5></a>
         </section>
 
 

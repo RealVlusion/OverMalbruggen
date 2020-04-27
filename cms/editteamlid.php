@@ -11,15 +11,39 @@ $stmt = $pdo->prepare("SELECT * FROM team WHERE teamlidID = ?");
 $stmt->execute(array($editID));
 $tempTeamlid = $stmt->fetch();
 
-
 //Klik op UPDATE
 if (isset($_POST['nw_update'])) {
     $title = $_POST['title'];
     $content = nl2br($_POST['content']);
     $rol = $_POST['teamlidRol'];
 
+    //Image processing
+    $file_name = $_FILES['image']['name'];
+    $file_size = $_FILES['image']['size'];
+    $file_tmp = $_FILES['image']['tmp_name'];
+    $file_type = $_FILES['image']['type'];
+    $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+
+    $extensions= array("jpeg","jpg","png");
+
+    if(in_array($file_ext,$extensions)=== false){
+        $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+    }
+
+    if($file_size > 2097152) {
+        $errors[]='Het bestand mag niet groter zijn dan 2MB';
+    }
+
+    if(empty($errors)==true) {
+        $image_path = "../uploads/".$file_name;
+        move_uploaded_file($file_tmp,$image_path);
+        echo "Success";
+    }else{
+        print_r($errors);
+    }
+
     //Update teamlid
-    $query = "UPDATE team SET teamlidNaam = '$title', teamlidOmschrijving = '$content', teamlidRol = '$rol' WHERE teamlidID = $editID";
+    $query = "UPDATE team SET teamlidNaam = '$title', teamlidOmschrijving = '$content', teamlidRol = '$rol', imagePath = '$image_path' WHERE teamlidID = $editID";
     $sql = $pdo->prepare($query);
     $sql->execute(array());
 
@@ -65,6 +89,9 @@ if (($_SESSION['logged_in'] == true)) {
                 <a class="nav-link" href="nieuws.php">Voorstellingen</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="logout.php">Uitloggen</a>
             </li>
         </ul>
@@ -93,6 +120,10 @@ if (($_SESSION['logged_in'] == true)) {
                     <label for="teamlidRol">Rol</label>
                     <input type="text" name="teamlidRol" class="form-control" value="<?php echo $tempTeamlid['teamlidRol'];?>" required id="teamlidRol" placeholder="Rol">
                 </div>
+                <div class="form-group">
+                    <input required type = "file" name = "image" />
+                </div>
+
                 <input type="submit" name="nw_update" value="Update teamlid"/>
             </form>
         </main>

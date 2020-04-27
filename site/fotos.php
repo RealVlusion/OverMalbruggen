@@ -1,23 +1,18 @@
 <?php
 
+ini_set('display_errors', 1);
+
 include_once('includes/connection.php');
-include_once('includes/voorstellingdatum.php');
+include_once('includes/nieuwsartikel.php');
+include_once('includes/image.php');
 
-$Voorstellingdatum = new Voorstellingdatum();
+$nieuwsartikel = new Nieuwsartikel;
 
-//Get voorstelling ID
-$voorstellingID = $_GET['id'];
+$nieuwsartikels = $nieuwsartikel->fetch_all();
 
-//Haal actuele voorstelling data op
-$stmt = $pdo->prepare("SELECT * FROM voorstelling WHERE voorstellingID = ?");
-$stmt->execute([$voorstellingID]);
-$tempVoorstelling = $stmt->fetch();
+$image = new Image();
 
-//Haal actuele voorstellingdatums data op
 
-$stmt2 = $pdo->prepare("SELECT * FROM voorstellingdatums WHERE voorstellingID = ?");
-$stmt2->execute([$voorstellingID]);
-$teampVoorstellingdatums = $stmt2->fetch();
 
 ?>
 
@@ -27,7 +22,9 @@ $teampVoorstellingdatums = $stmt2->fetch();
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OverMalbruggen | Voorstellingdetails</title>
+    <title>OverMalbruggen | Home</title>
+    <meta name="keywords" content="OverMalbruggen,Theater,Theatergroep,Malburgen">
+    <link rel="icon" type="image/png" href="../img/NavbarLogoWhite.png">
 
     <!--imports-->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
@@ -37,14 +34,8 @@ $teampVoorstellingdatums = $stmt2->fetch();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/voorstelling.css">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
-
-
-
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" type="text/css" href="https://overmalbruggen.nl/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/gallery.css">
 
 </head>
 
@@ -58,7 +49,7 @@ $teampVoorstellingdatums = $stmt2->fetch();
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -80,13 +71,14 @@ $teampVoorstellingdatums = $stmt2->fetch();
             <li class="nav-item">
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="fotos.php">Foto's</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
         </ul>
+
     </div>
     <ul class="nav navbar-nav navbar-right">
         <li>
@@ -106,58 +98,31 @@ $teampVoorstellingdatums = $stmt2->fetch();
 
 <main>
 
-    <div class="voorstellingDetailContent">
-        <section class="voorstellingContainer">
-            <?php
-                $voorstellingNaam = $tempVoorstelling['voorstellingNaam'];
-                if ($tempVoorstelling['isActief'] == 1) {
-                    echo "<h3 class='centerText'> $voorstellingNaam <span class='badge badge-success'>Actief</span></h3>";
-                }
-                else {
-                echo "<h3 class='centerText'> $voorstellingNaam <span class='badge badge-danger'>Archief</span></h3>";
-            }
-            ?>
+    <div class="indexContent">
 
-            <section class="voorstellingContainer">
-                <div class="text-center">
-                    <img class="img-fluid voorstellingImg" src="<?php echo $tempVoorstelling['imagePath']?>">
-                    <h6><?php echo $tempVoorstelling['voorstellingContent']?></h6>
-                </div>
+        <section class="galleryIntro">
+            <h1 class="centerText">Foto's</h1>
 
-                <div class="container datesContent">
-                    <a href="tickets.php"><button type="button" class="btn btn-danger">Tickets</button></a>
-                    <h3 class="centerText">Speeltijden</h3>
-                    <div class="row text-center">
-                        <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ] opvoeringContainer">
-                            <ul class="event-list datesContent">
 
-                                <?=$Voorstellingdatum->getVoorstellingDates($voorstellingID)?>
+            <section class="imageGallery">
 
-                            </ul>
-                        </div>
-                    </div>
-                    <h3 class="centerText">Prijzen</h3>
-                    <h4>Regulier €<?php echo $tempVoorstelling['voorstellingPrijsRegulier']?></h4>
+                <?=$image->getHtml(1)?>
 
-                    <?php if ($tempVoorstelling['voorstellingPrijsCJP'] > 0){
-                        echo "<h4>CJP €"; echo $tempVoorstelling['voorstellingPrijsCJP']; echo"</h4>";
-                    }
-                    ?>
-
-                    <?php if ($tempVoorstelling['voorstellingPrijsGelrepas'] > 0){
-                        echo "<h4>Gelrepas €"; echo $tempVoorstelling['voorstellingPrijsGelrepas']; echo"</h4>";
-                    }
-                    ?>
-
-                </div>
             </section>
-        </section>
-    </div>
+            </div>
 
+        </section>
+
+        <section class="indexNieuws">
+
+        </section>
+        </section>
+
+    </div>
 </main>
 
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "footer.php"?>
 </footer>
 
 </body>

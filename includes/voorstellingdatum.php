@@ -18,6 +18,7 @@ class Voorstellingdatum {
         $count = 0;
         foreach ($voorstellingDatums as $datum) {
             $timestamp = strtotime($datum["voorstellingDatum"]);
+            $voorstellingTijd = $datum["voorstellingTijd"];
             $jaar = date("Y", $timestamp);
             $maand = date("M", $timestamp);
             $dag = date("d", $timestamp);
@@ -33,7 +34,7 @@ class Voorstellingdatum {
                         </time>
                         <div class=\"info\">
                             <h2 class=\"title\">Opvoering $count</h2>
-                            <p class=\"desc\">12.00</p>
+                            <p class=\"desc\">$voorstellingTijd</p>
                         </div>
                     </li>";
 

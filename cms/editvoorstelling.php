@@ -1,6 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
 include_once('../includes/connection.php');
 
 session_start();
@@ -22,6 +21,32 @@ $tempVoorstelling = $stmt->fetch();
         $voorstellingdatums = $_POST['voorstellingdatums'];
         $isActief = $_POST['isActief'];
 
+        //Image processing
+        $file_name = $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+        $file_type = $_FILES['image']['type'];
+        $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+
+        $extensions= array("jpeg","jpg","png");
+
+        if(in_array($file_ext,$extensions)=== false){
+            $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+        }
+
+        if($file_size > 2097152) {
+            $errors[]='Het bestand mag niet groter zijn dan 2MB';
+        }
+
+        if(empty($errors)==true) {
+            $image_path = "../uploads/".$file_name;
+            move_uploaded_file($file_tmp,$image_path);
+            echo "Success";
+        }else{
+            print_r($errors);
+        }
+
+        //Set voorstellingdatums
         if(empty($voorstellingDatum2)){
             $voorstellingDatum2 = NULL;
         }
@@ -39,7 +64,7 @@ $tempVoorstelling = $stmt->fetch();
 
         //Update voorstelling
         $query = "UPDATE voorstelling SET voorstellingNaam = '$voorstellingNaam', voorstellingContent = '$voorstellingContent', voorstellingPrijsRegulier = '$voorstellingPrijsRegulier',
-        voorstellingPrijsCJP = '$voorstellingPrijsCJP', voorstellingPrijsGelrepas = '$voorstellingPrijsGelrepas', isActief = $isActief  WHERE voorstellingID = $editID";
+        voorstellingPrijsCJP = '$voorstellingPrijsCJP', voorstellingPrijsGelrepas = '$voorstellingPrijsGelrepas', imagePath = '$image_path', isActief = $isActief  WHERE voorstellingID = $editID";
         $sql = $pdo->prepare($query);
         $sql->execute(array());
 
@@ -160,6 +185,9 @@ if (($_SESSION['logged_in'] == true)) {
                     <div class="col-10">
                         <input class="form-control" name="voorstellingdatums[]" type="date" value="" id="voorstellingDatum4">
                     </div>
+                </div>
+                <div class="form-group">
+                    <input required type = "file" name = "image" />
                 </div>
                 <div class="form-group">
                     <label for="isActief">Status:</label>
