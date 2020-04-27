@@ -1,7 +1,7 @@
 <?php
 
-include_once('includes/connection.php');
-include_once('includes/voorstelling.php');
+include_once('../includes/connection.php');
+include_once('../includes/voorstelling.php');
 
 $voorstelling = new Voorstelling();
 
@@ -59,6 +59,9 @@ $voorstelling = new Voorstelling();
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="voorstellingen.php">Voorstellingen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>

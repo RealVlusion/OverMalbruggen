@@ -65,6 +65,9 @@ if (($_SESSION['logged_in'] == true)) {
                 <a class="nav-link" href="nieuws.php">Voorstellingen</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="editfotos.php">Foto's</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="logout.php">Uitloggen</a>
             </li>
         </ul>
@@ -98,7 +101,7 @@ if (($_SESSION['logged_in'] == true)) {
         </main>
 </div>
 
-<a href="../index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
+<a href="../site/index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
 </body>
 </html>
 

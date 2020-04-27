@@ -173,7 +173,7 @@ if (($_SESSION['logged_in'] == true)) {
         </main>
 </div>
 
-<a href="../index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
+<a href="../site/index.php" class="backToIndex"><button type="button" class="btn btn-secondary"><< Back to Index</button></a>
 </body>
 </html>
 

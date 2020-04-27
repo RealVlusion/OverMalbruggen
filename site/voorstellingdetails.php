@@ -81,6 +81,9 @@ $teampVoorstellingdatums = $stmt2->fetch();
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
         </ul>
@@ -103,7 +106,7 @@ $teampVoorstellingdatums = $stmt2->fetch();
 
 <main>
 
-    <div class="voorstellingContent">
+    <div class="voorstellingDetailContent">
         <section class="voorstellingContainer">
             <?php
                 $voorstellingNaam = $tempVoorstelling['voorstellingNaam'];
@@ -117,7 +120,7 @@ $teampVoorstellingdatums = $stmt2->fetch();
 
             <section class="voorstellingContainer">
                 <div class="text-center">
-                    <img class="img-fluid" src="<?php echo $tempVoorstelling['imagePath']?>">
+                    <img class="img-fluid voorstellingImg" src="<?php echo $tempVoorstelling['imagePath']?>">
                     <h6><?php echo $tempVoorstelling['voorstellingContent']?></h6>
                 </div>
 

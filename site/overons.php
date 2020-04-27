@@ -61,6 +61,9 @@ $teammember = $team->fetch_all();
                 <a class="nav-link" href="voorstellingen.php">Voorstellingen</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="fotos.php">Foto's</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
         </ul>
@@ -133,42 +136,42 @@ $teammember = $team->fetch_all();
 
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-20">
-                    <img class="img-fluid" src="img/sponsors/LeefbaarGelderland.jpg" alt="LeefbaarGelderland">
+                    <img class="img-fluid sponsorImg" src="img/sponsors/LeefbaarGelderland.jpg" alt="LeefbaarGelderland">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="img/sponsors/ZFonds.jpg" alt="ZFonds">
+                    <img class="img-fluid sponsorImg" src="img/sponsors/ZFonds.jpg" alt="ZFonds">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="img/sponsors/VSBFonds.jpg" alt="VSBFonds">
+                    <img class="img-fluid sponsorImg" src="img/sponsors/VSBFonds.jpg" alt="VSBFonds">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="img/sponsors/LogoWijkplatform.jpg" alt="LogoWijkplatform"><figcaption class="figure-caption text-right">Malburgen Oost</figcaption>
+                    <img class="img-fluid sponsorImg" src="img/sponsors/LogoWijkplatform.jpg" alt="LogoWijkplatform"><figcaption class="figure-caption text-right">Malburgen Oost</figcaption>
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="img/sponsors/UitnachtArnhem.png" alt="UitnachtArnhem">
+                    <img class="img-fluid sponsorImg" src="img/sponsors/UitnachtArnhem.png" alt="UitnachtArnhem">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="img/sponsors/LogoBruishuis.png" alt="LogoBruishuis">
+                    <img class="img-fluid sponsorImg" src="img/sponsors/LogoBruishuis.png" alt="LogoBruishuis">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="img/sponsors/LogoRuimtekoers.png" alt="LogoRuimtekoers">
+                    <img class="img-fluid sponsorImg" src="img/sponsors/LogoRuimtekoers.png" alt="LogoRuimtekoers">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
                 <a href="#" class="d-block mb-4 h-100">
-                    <img class="img-fluid" src="../img/sponsors/huis.jpg" alt=""><figcaption class="figure-caption text-right">Huis voor de Wijk</figcaption>
+                    <img class="img-fluid sponsorImg" src="../img/sponsors/huis.jpg" alt=""><figcaption class="figure-caption text-right">Huis voor de Wijk</figcaption>
                 </a>
             </div>
         </div>

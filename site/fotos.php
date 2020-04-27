@@ -4,15 +4,15 @@ ini_set('display_errors', 1);
 
 include_once('../includes/connection.php');
 include_once('../includes/nieuwsartikel.php');
-include_once('../includes/voorstelling.php');
+include_once('../includes/image.php');
 
 $nieuwsartikel = new Nieuwsartikel;
 
 $nieuwsartikels = $nieuwsartikel->fetch_all();
 
-$voorstelling = new Voorstelling();
+$image = new Image();
 
-$voorstellingen = $voorstelling->getSlideshowNewest();
+
 
 ?>
 
@@ -35,6 +35,7 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://overmalbruggen.nl/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/gallery.css">
 
 </head>
 
@@ -96,50 +97,83 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
 </header>
 
 <main>
-    <section class="indexCarousel">
-        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-                <h1 class="centerText">Nieuwste voorstellingen</h1>
 
-
-
-                <?=$voorstelling->getSlideshowNewest()?>
-
-                </a>
-
-
-            </div>
-        </div>
-    </section>
     <div class="indexContent">
 
-        <section class="indexIntro">
-            <h1 class="centerText">Welkom</h1>
-            <h6>Welkom op de website van theater OverMalbruggen. Wij zijn de theatergroep in Malburgen te Arnhem die bedoeld is om elkaar te ontmoeten,
-                met mensen met verschillende (culturele) achtergronden te verbinden en elkaars verhaal leren kennen en natuurlijk een hoop lol te maken samen!</h6>
+        <section class="galleryIntro">
+            <h1 class="centerText">Foto's</h1>
+
+
+            <section class="imageGallery">
+                <?=$image->getHtml(1)?>
+<!---->
+<!--                <div class="gallery">-->
+<!--                    <a target="_blank" href="https://designshack.net/wp-content/uploads/placeholder-image.png">-->
+<!--                        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png" alt="Cinque Terre" width="600" height="400">-->
+<!--                    </a>-->
+<!--                    <div class="desc">Add a description of the image here</div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="gallery">-->
+<!--                    <a target="_blank" href="img_forest.jpg">-->
+<!--                        <img src="https://www.groningen-seaports.com/wp-content/uploads/placeholder-480x320.jpg" alt="Forest" width="600" height="400">-->
+<!--                    </a>-->
+<!--                    <div class="desc">Add a description of the image here</div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="gallery">-->
+<!--                    <a target="_blank" href="img_lights.jpg">-->
+<!--                        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png" alt="Northern Lights" width="600" height="400">-->
+<!--                    </a>-->
+<!--                    <div class="desc">Add a description of the image here</div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="gallery">-->
+<!--                    <a target="_blank" href="img_mountains.jpg">-->
+<!--                        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png" alt="Mountains" width="600" height="400">-->
+<!--                    </a>-->
+<!--                    <div class="desc">Add a description of the image here</div>-->
+<!--                </div>-->
+<!--                <div class="gallery">-->
+<!--                    <a target="_blank" href="img_5terre.jpg">-->
+<!--                        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png" alt="Cinque Terre" width="600" height="400">-->
+<!--                    </a>-->
+<!--                    <div class="desc">Add a description of the image here</div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="gallery">-->
+<!--                    <a target="_blank" href="img_forest.jpg">-->
+<!--                        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png" alt="Forest" width="600" height="400">-->
+<!--                    </a>-->
+<!--                    <div class="desc">Add a description of the image here</div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="gallery">-->
+<!--                    <a target="_blank" href="img_lights.jpg">-->
+<!--                        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png" alt="Northern Lights" width="600" height="400">-->
+<!--                    </a>-->
+<!--                    <div class="desc">Add a description of the image here</div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="gallery">-->
+<!--                    <a target="_blank" href="img_mountains.jpg">-->
+<!--                        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png" alt="Mountains" width="600" height="400">-->
+<!--                    </a>-->
+<!--                    <div class="desc">Add a description of the image here</div>-->
+<!--                </div>-->
+            </section>
+            </div>
+
+
+
+
         </section>
 
+
+
+
         <section class="indexNieuws">
-            <h1 class="centerText">Nieuws</h1>
-            <section class="flexContainer" >
 
-                <?php $reversednieuwsartikels = array_reverse($nieuwsartikels);?>
-
-                <?php foreach ($reversednieuwsartikels as $nieuwsartikel) { ?>
-                    <section class="flexItem">
-                        <div class="candy_content">
-                            <div class="candyText">
-                                <img class="card-img-top" src="<?php echo $nieuwsartikel['imagePath']; ?>" alt="<?php echo $nieuwsartikel['nieuwsTitel']; ?>">
-                                <h5><?php echo $nieuwsartikel['nieuwsTitel']; ?></h5>
-                                <p><?php echo substr($nieuwsartikel['nieuwsContent'], 0, 170);?> ...</p></a>
-                                <a href='nieuwsartikel.php?artikelID=<?php echo $nieuwsartikel['nieuwsID']; ?>'>Bekijk</a>
-                            </div>
-                        </div>
-                    </section>
-                <?php } ?>
-
-
-            </section>
         </section>
         </section>
 
