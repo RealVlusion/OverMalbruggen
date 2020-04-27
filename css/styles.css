@@ -24,6 +24,12 @@
 }
 
 .indexIntro{
+     width: 80%;
+     margin: auto;
+     padding: 1rem;
+ }
+
+.galleryIntro{
     width: 80%;
     margin: auto;
     padding: 1rem;
@@ -247,6 +253,10 @@ footer a:visited{
 
     .indexContent{
         max-width: 90%;
+    }
+
+    .galleryContent{
+        max-width: 80%;
     }
 
     .indexCarousel{

@@ -2,9 +2,9 @@
 
 ini_set('display_errors', 1);
 
-include_once('includes/connection.php');
-include_once('includes/nieuwsartikel.php');
-include_once('includes/voorstelling.php');
+include_once('../includes/connection.php');
+include_once('../includes/nieuwsartikel.php');
+include_once('../includes/voorstelling.php');
 
 $nieuwsartikel = new Nieuwsartikel;
 

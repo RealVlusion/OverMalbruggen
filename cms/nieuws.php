@@ -17,16 +17,6 @@ if(isset($_GET['deleteID'])){
     header('Location: nieuws.php');
 }
 
-//if(isset($_GET['editID'])){
-//    $editID = $_GET['editID'];
-//
-//    $query = $pdo->prepare('DELETE FROM nieuws WHERE nieuwsID = ?');
-//    $query->bindValue(1, $editID);
-//    $query->execute();
-//
-//    header('Location: nieuws.php');
-//}
-
 $nieuwsartikels = $nieuwsartikel->fetch_all();
 
 ?>
