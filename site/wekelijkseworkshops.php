@@ -79,15 +79,15 @@
         <section class="meedoenSection">
             <div class="col">
 
-                <h5>Wat leuk dat je definitief mee wil doen met Theater OverMalbruggen! De wekelijkse workshops zijn weer van start gegaan in september. Je betaald altijd voor 5 maanden workshops (of de resterende maanden tot de uitvoering). Deze reeks duurt t/m januari waarin de voorstelling wordt opgevoerd. Wij kijken er naar uit.</h5>
+                <h5>Wat leuk dat je definitief mee wil doen met Theatergroep OverMalbruggen!  Je betaalt altijd voor de resterende maanden tot de uitvoering die in mei en juni zullen plaatsvinden. Wij kijken er naar uit met jou verhaal aan de slag te gaan voor een prachtige theater voorstelling!</h5>
                 <h5>Iedere week op:</h5>
                 <h5>-Donderdagavond om 19:30-21:30 (Mocht je echter graag mee willen doen maar kan je niet op donderdag, mail dan naar: info@overmalbruggen.nl, bij genoeg mensen starten we wellicht een nieuwe groep op!)</h5>
 
                 <h5>Locatie: Het Huis voor de Wijk (Eimerssingel Oost 266 in Arnhem)</h5><br>
-                <h5>Kosten: 12,50 euro per maand (inclusief btw) of 1,25 euro (inclusief btw) indien in bezit van een GelrePas (over hoe te betalen zullen wij u in de mail die u aan de hand van deze inschrijving ontvangt verder infomeren)</h5>
+                <h5>Kosten: 12,50 euro per maand of 1,25 euro indien in bezit van een GelrePas (over hoe te betalen zullen wij u in de mail die u aan de hand van deze inschrijving ontvangt verder infomeren)</h5>
 
                 <br>
-                <h5><strong>LET WEL OP!</strong> Wij willen dat Theater OverMalbruggen voor iedereen toegankelijk is dus kunt u echt niks missen in de maand, laat het ons dan weten in het OPMERKINGEN veld, we zoeken graag een oplossing! Ook als u buiten Arnhem-Zuid woont of net niet in de leeftijdscatagorie valt!<br>
+                <h5><strong>LET WEL OP!</strong> Wij willen dat Theater OverMalbruggen voor iedereen toegankelijk is dus kunt u echt niks missen in de maand, laat het ons dan weten in het OPMERKINGEN veld, we zoeken graag een oplossing! <br>
         </section>
 
         <div class="ticketContainer">
@@ -153,7 +153,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="privacyVerklaring">
                         <label class="form-check-label" for="privacyVerklaring">
-                            Hierbij accepteer ik de algemene voorwaarden en privacyverklaring
+                            Hierbij accepteer ik de <a href="AlgemeneVoorwaarden.php" target="_blank">Algemene Voorwaarden</a> en <a href="PrivacyVerklaring.php" target="_blank">Privacyverklaring</a>
                         </label>
                     </div>
                     <br>

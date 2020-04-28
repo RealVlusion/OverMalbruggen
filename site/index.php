@@ -2,9 +2,9 @@
 
 ini_set('display_errors', 1);
 
-include_once('../includes/connection.php');
-include_once('../includes/nieuwsartikel.php');
-include_once('../includes/voorstelling.php');
+include_once('includes/connection.php');
+include_once('includes/nieuwsartikel.php');
+include_once('includes/voorstelling.php');
 
 $nieuwsartikel = new Nieuwsartikel;
 
@@ -115,8 +115,9 @@ $voorstellingen = $voorstelling->getSlideshowNewest();
 
         <section class="indexIntro">
             <h1 class="centerText">Welkom</h1>
-            <h6>Welkom op de website van theater OverMalbruggen. Wij zijn de theatergroep in Malburgen te Arnhem die bedoeld is om elkaar te ontmoeten,
-                met mensen met verschillende (culturele) achtergronden te verbinden en elkaars verhaal leren kennen en natuurlijk een hoop lol te maken samen!</h6>
+            <h6>Welkom op de website van Stichting OverMalbruggen. Wij zijn de stichting in Malburgen te Arnhem die bedoeld is om elkaar te ontmoeten via dans, theater, muziek of andere kunstzinnige activiteiten.
+                Momenteel zijn we voornamelijk bezig met onze theaterprojecten, dus mocht je eens mee willen komen spelen, iedereen is welkom! Of je nu jong bent of oud, veel of weinig ervaring hebt met theater,
+                waar je ook maar vandaan komt of wat je beperkingen dan ook zouden zijn! Kom vooral meedoen! Kijk snel bij het kopje meedoen!	</h6>
         </section>
 
         <section class="indexNieuws">

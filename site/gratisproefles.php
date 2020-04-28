@@ -79,11 +79,11 @@
 
         <section class="meedoenSection">
 
-                <h5>Vanaf februari 2020 is het weer mogelijk om een proefles te komen bij Theatergroep OverMalbruggen. Sterker nog, deze maand mag je de hele maand vrijblijvend mee doen om te kijken of je vanaf maart met ons mee wil repeteren!</h5>
-                <h5>Schrijf je dus snel in voor een gratis proefles via onderstaande formulier in. Ook als je elders in Arnhem woont of net buiten de leeftijdscategorie valt ben je welkom!</h5>
-                <h5>Tijd:<br>
-                    Donderdagavond om 19:30-21:30 (Mocht je echter graag mee willen doen maar kan je niet op donderdag, mail dan naar: info@overmalbruggen.nl, bij genoeg mensen starten we wellicht een nieuwe groep op!)</h5>
-                <h6>Locatie: Het Huis voor de Wijk (Eimerssingel Oost 266 in Arnhem)</h6>
+            <h5>Vanaf september 2020 zal het weer mogelijk zijn een proefles te komen doen bij Theatergroep OverMalbruggen. Sterker nog in september, oktober en november mag je drie keer vrijblijvend mee doen om te kijken of je hierna met ons mee wil repeteren! </h5>
+            <h5>Schrijf je dus vooral in voor drie gratis proeflessen via onderstaande formulier. Ook als je elders in Arnhem woont ben je welkom!</h5>
+            <h5>Tijd:<br>
+                Donderdagavond om 19:30-21:30 (Mocht je echter graag mee willen doen maar kan je niet op donderdag, mail dan naar: info@overmalbruggen.nl, bij genoeg mensen starten we wellicht een nieuwe groep op!)</h5>
+            <h6>Locatie: Het Huis voor de Wijk (Eimerssingel Oost 266 in Arnhem)</h6>
         </section>
 
         <div class="ticketContainer">

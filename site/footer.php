@@ -31,7 +31,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col copyright">
-                    <p class=""><small class="text-white-50">Copyright © - 2020 Malbruggen | Ontworpen door <a href="https://www.levelswebdesign.nl/">Levels Webdesign</a> | <a href="../cms/inloggen.php">CMS</a></small></p>
+                    <p class=""><small class="text-white-50">Copyright © - 2020 Malbruggen | Ontworpen door <a href="https://www.levelswebdesign.nl/">Levels Webdesign</a> | <a href="../AlgemeneVoorwaarden.php">Algemene Voorwaarden</a> | <a href="../PrivacyVerklaring.php">Privacy Verklarking</a> | <a href="../BeleidsplanOverMalbruggen.php">Beleidsplan</a> | <a href="../cms/inloggen.php">CMS</a> |</small></p>
                 </div>
             </div>
         </div>
