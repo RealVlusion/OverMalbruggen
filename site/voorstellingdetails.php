@@ -109,11 +109,11 @@ $teampVoorstellingdatums = $stmt2->fetch();
     <div class="voorstellingDetailContent">
         <section class="voorstellingContainer">
             <?php
-                $voorstellingNaam = $tempVoorstelling['voorstellingNaam'];
-                if ($tempVoorstelling['isActief'] == 1) {
-                    echo "<h3 class='centerText'> $voorstellingNaam <span class='badge badge-success'>Actief</span></h3>";
-                }
-                else {
+            $voorstellingNaam = $tempVoorstelling['voorstellingNaam'];
+            if ($tempVoorstelling['isActief'] == 1) {
+                echo "<h3 class='centerText'> $voorstellingNaam <span class='badge badge-success'>Actief</span></h3>";
+            }
+            else {
                 echo "<h3 class='centerText'> $voorstellingNaam <span class='badge badge-danger'>Archief</span></h3>";
             }
             ?>

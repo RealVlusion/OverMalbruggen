@@ -99,7 +99,7 @@ $teammember = $team->fetch_all();
                 voornamelijk onder ouderen.</p>
             <hr>
 
-            <h2 class="centerText">De kracht van theater</h2>
+            <h2 class="centerText">De kracht van de kunsten</h2>
             <p>Culturele activiteiten kunnen uitkomst bieden bij deze problemen omdat zij ”de ander” op een niet bedreigende manier kunnen tonen.
                 Theater kan de mens achter een ogenschijnlijk vreemd of soms ”eng” masker laten zien en doordat mensen elkaars verhaal zo kunnen horen kunnen nieuwe perspectieven
                 en meer begrip voor mensen met een andere achtergrond ontstaan. Hierdoor komen nieuwe verbindingen tot stand tussen mensen als ook meer zelfvertrouwen
@@ -108,7 +108,7 @@ $teammember = $team->fetch_all();
                 Ook muziek en dans kunnen communicatie bewerkstelligen zonder taalbarrières tussen mensen met verschillende culturele achtergronden.</p>
             <hr>
 
-            <h2 class="centerText">Wat doet theater OverMalbruggen</h2>
+            <h2 class="centerText">Wat doet stichting OverMalbruggen</h2>
             <p>Stichting OverMalbruggen wil deze kracht van dans, theater en muziek om ontmoetingen en verbindingen tussen mensen te bewerkstelligen en meer begrip voor elkaar te krijgen, gebruiken.
                 In onze theaterprojecten werken deelnemers uit Arnhem-Zuid van 16-80 jaar en van verscheidene afkomsten, genders, seksuele oriëntaties,
                 sociaaleconomische posities, handicappen etc in wekelijkse workshops samen om een toneelvoorstelling te realiseren.<br>
@@ -125,7 +125,7 @@ $teammember = $team->fetch_all();
                 <p>Theatergroep OverMalbruggen is opgericht door Freija Poll, Arash Jabbarie en Inez de Groot op 4 april 2019. Op 15 april 2020 is Theatergroep OverMalbruggen
                     gaan vallen onder de, op die datum opgerichte, stichting; Stichting OverMalbruggen, met KvK-nummer: 77842502<br><br>
                     Stichting OverMalbruggen heeft een onafhankelijke adviesraad die momenteel bestaat uit Yosser Dekker, Sharon Merk en Ben Verberk.
-                    werken we veelal samen met vrijwilligers, andere organisaties (bijvoorbeeld Wase Omar van Vereniging Sport en Integratie, of Rico Kreijnen van Drumband DWS)
+                    Ook werken we veelal samen met vrijwilligers, andere organisaties (bijvoorbeeld Wase Omar van Vereniging Sport en Integratie, of Rico Kreijnen van Drumband DWS)
                     en gastdocenten (Bijvoorbeeld dansexpressie docent Els Reijn).
                     De harde kern van onze organisatie vindt u hieronder.
                 </p>

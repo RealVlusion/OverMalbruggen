@@ -13,12 +13,15 @@ class Voorstellingdatum {
     public function getVoorstellingDates($voorstellingID)
     {
         $voorstellingDatums = $this->fetch_all($voorstellingID);
+
         $html = "";
 
         $count = 0;
         foreach ($voorstellingDatums as $datum) {
-            $timestamp = strtotime($datum["voorstellingDatum"]);
-            $voorstellingTijd = $datum["voorstellingTijd"];
+            $datetime = $datum["datetime"];
+            $location = $datum["location"];
+            $onlyTime = substr($datetime, -8, 5);
+            $timestamp = strtotime($datum["datetime"]);
             $jaar = date("Y", $timestamp);
             $maand = date("M", $timestamp);
             $dag = date("d", $timestamp);
@@ -34,7 +37,8 @@ class Voorstellingdatum {
                         </time>
                         <div class=\"info\">
                             <h2 class=\"title\">Opvoering $count</h2>
-                            <p class=\"desc\">$voorstellingTijd</p>
+                            <p class=\"desc\">$onlyTime</p>
+                            <p class=\"desc\">$location</p>
                         </div>
                     </li>";
 

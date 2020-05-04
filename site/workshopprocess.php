@@ -22,9 +22,9 @@ $conf_subject = 'Bevestiging workshop';
 // Who should the confirmation email be from?
 $conf_sender = 'OverMalbruggen <info@overmalbruggen.nl>';
 
-$msg = "Beste meneer, mevrouw" . ",\n\nBedankt voor het invullen van het formulier op de website van Stichting OverMalbruggen.
- We zullen u spoedig berichten over de eerstvolgende (proef)les waar u aan mee kan komen doen. \n
- We kijken er naar uit u dan te mogen ontmoeten!\n
+$msg = "Beste meneer, mevrouw" . ",\n\nBedankt voor het invullen van het formulier op de website van Stichting OverMalbruggen.\n
+ We zullen u spoedig berichten over de eerstvolgende les van de workshop reeks waar u aan mee gaat doen! Tevens zullen we u spoedig contacten over de betaling. \n\n
+ We kijken er naar uit!\n
  Mocht u nog vragen hebben bel of mail ons vooral (zie contactgegevens hieronder).\n\n
  Hartelijke groet,\n
  Freija Poll\n
